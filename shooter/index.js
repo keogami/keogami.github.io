@@ -1,6 +1,6 @@
 import { Screen } from "./modules/Screen.js";
 import { Vector2 } from "./modules/System.js";
-import { Keyboard } from "./modules/Controllers.js";
+import { Keyboard, Mouse } from "./modules/Controllers.js";
 
 const $ = document
 
@@ -32,8 +32,8 @@ class Player {
     ctx.save()
     ctx.beginPath()
     ctx.fillStyle = this.color
-    ctx.shadowBlur = 5
-    ctx.shadowColor = this.color
+    ctx.shadowBlur = 6
+    ctx.shadowColor = "#af1313"
     ctx.arc(this.coord.x, this.coord.y, this.size, 0, Math.PI * 2)
     ctx.fill()
     ctx.closePath()
@@ -45,18 +45,20 @@ const screen = new Screen($.querySelector("canvas#main"))
 screen.Resize(innerWidth, innerHeight)
 screen.SetBackground("black")
 
-const p = new Player(screen.origin, 30, "white", new Vector2(4, 4))
+const p = new Player(screen.origin, 25, "#a80707", new Vector2(4, 4))
 screen.AddComponent(p)
 
 
 const keys = new Keyboard()
 keys.Connect(window)
+const mouse = new Mouse()
+mouse.Connect(window)
 
 function frame() {
   if (keys.escape) {
     return
   }
-  screen.Update({ keys })
+  screen.Update({ keys, mouse })
   screen.Draw()
   requestAnimationFrame(frame)
 }

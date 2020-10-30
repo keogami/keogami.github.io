@@ -1,3 +1,5 @@
+import { Coord } from "./System.js"
+
 class Keyboard {
   constructor() {
     this.up = this.down = this.right = this.left = this.escape = false
@@ -29,4 +31,17 @@ class Keyboard {
   }
 }
 
-export { Keyboard }
+class Mouse {
+  constructor() {
+    this.coord = new Coord(0, 0)
+  }
+
+  Connect(element) {
+    element.addEventListener("mousemove", (ev) => {
+      this.coord.x = ev.clientX
+      this.coord.y = ev.clientY
+    })
+  }
+}
+
+export { Keyboard, Mouse }
