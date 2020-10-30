@@ -1,10 +1,21 @@
 import { Coord } from "./System.js"
 
+// Screen handles the game's interaction with the canvas
+// it keeps the list of component that are "drawn" on the screen
+// the components can inserted and deleted from the screen
+//
+// Updating the screen updates all the components on the screen
+// the component MAY NOT have an .Update(data) method, in which case its not drawn
+// updates are done in order of insertion, but the aplication mustn't depend on this detail
+//
+// Drawing the screen simply implies clearing the canvas and drawing the components
+// all components MUST have a .Draw(screen) method
 class Screen {
   constructor(canvas) {
     this._canvas = canvas
     this.ctx = canvas.getContext("2d")
     this.origin = new Coord(canvas.width / 2, canvas.height / 2)
+    this._components = new Set()
   }
 
   Resize(width, height) {
@@ -16,6 +27,31 @@ class Screen {
 
   SetBackground(color) {
     this._canvas.style.backgroundColor = color
+  }
+
+  AddComponent(it) {
+    this._components.add(it)
+  }
+
+  RemoveComponent(it) {
+    return this._components.delete(it)
+  }
+
+  Update(data) {
+    for (let comp of this._components) {
+      comp.Update && comp.Update(data)
+    } 
+  }
+
+  Clear() {
+    this.ctx.clearRect(0, 0, this._canvas.width, this._canvas.height)
+  }
+
+  Draw() {
+    this.Clear()
+    for (let comp of this._components) {
+      comp.Draw(this)
+    }
   }
 }
 

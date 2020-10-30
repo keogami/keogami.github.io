@@ -3,6 +3,11 @@ class Vector2 {
     this.x = x
     this.y = y
   }
+  
+  Add(v2) {
+    this.x += v2.x
+    this.y += v2.y
+  }
 }
 
 class Coord extends Vector2 {
