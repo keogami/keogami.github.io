@@ -26,7 +26,9 @@ screen.AddComponent("projectiles", projectiles)
 const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
-enemies.Add(new Enemy(new Coord(90, 90), "brown", 35, new Vector2(0, 0)))
+setInterval(() => {
+  enemies.Add(new Enemy(screen.RandomCoord({outside: true}), "brown", 35, new Vector2(0, 0)))
+}, 1000)
 
 addEventListener('click', (ev) => {
   const vel = Vector2.Slope(player.coord, reticle.coord).Scale(16)

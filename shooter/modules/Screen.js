@@ -67,6 +67,23 @@ class Screen {
     return true
   }
 
+  RandomCoord({ outside }) {
+    let x = Math.random(), y = Math.random()
+    if (!outside) {
+      x *= this._canvas.width
+      y *= this._canvas.height
+    } else {
+      if (Math.random() >= 0.5) {
+        x = (Math.random() >= 0.5) ? 0 : this._canvas.width
+        y *= this._canvas.height
+      } else {
+        x *= this._canvas.width
+        y = (Math.random() >= 0.5) ? 0 : this._canvas.height
+      }
+    }
+    return new Coord(x, y)
+  }
+
   SetBackground(color) {
     this._canvas.style.backgroundColor = color
   }
