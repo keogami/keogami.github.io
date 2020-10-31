@@ -22,3 +22,5 @@ class Projectile {
     ctx.restore()
   }
 }
+
+export { Projectile }

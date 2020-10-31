@@ -1,7 +1,7 @@
-import { Screen } from "./modules/Screen.js";
+import { Screen, ComponentSet } from "./modules/Screen.js";
 import { Vector2, InfoDict, Time } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
-import { Player, Reticle } from "./modules/Components.js"
+import { Player, Reticle, Projectile } from "./modules/Components.js"
 
 const $ = document
 const DEBUG = true
@@ -14,11 +14,18 @@ const screen = new Screen($.querySelector("canvas#main"))
 screen.Resize(innerWidth, innerHeight)
 screen.SetBackground("black")
 
-const p = new Player(screen.origin, 25, "#a80707", new Vector2(8, 8))
-screen.AddComponent("player", p)
+const player = new Player(screen.origin, 25, "#a80707", new Vector2(8, 8))
+screen.AddComponent("player", player)
 
-const r = new Reticle(screen.origin, "blue", 15)
-screen.AddComponent("reticle", r)
+const reticle = new Reticle(screen.origin, "blue", 15)
+screen.AddComponent("reticle", reticle)
+
+const projectiles = new ComponentSet()
+screen.AddComponent("projectiles", projectiles)
+
+addEventListener('click', (ev) => {
+  projectiles.Add(new Projectile(screen.GetComponent("player").coord, "pink", 8, new Vector2(14, 14)))
+})
 
 
 const keys = new Keyboard()
