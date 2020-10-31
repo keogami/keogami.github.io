@@ -52,7 +52,7 @@ function frame() {
 
   // Update and draw the screen
   const start = Time.Now()
-  screen.Update({ keys, mouse, elapsedTime })
+  screen.Update({ keys, mouse, elapsedTime, screen })
   screen.Draw()
   const took = Time.Since(start)
 
