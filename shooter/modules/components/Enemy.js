@@ -1,3 +1,5 @@
+import { Vector2 } from "../System.js"
+
 class Enemy {
   constructor(coord, color, size, velocity) {
     this.coord = coord.Clone()
@@ -6,7 +8,8 @@ class Enemy {
     this.velocity = velocity
   }
 
-  Update() {
+  Update({ screen }) {
+    this.velocity = Vector2.Slope(this.coord, screen.GetComponent("player").coord).Scale(5)
     this.coord.Add(this.velocity)
   }
 
