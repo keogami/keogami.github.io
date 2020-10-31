@@ -27,7 +27,10 @@ const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
 setInterval(() => {
-  enemies.Add(new Enemy(screen.RandomCoord({outside: true}), "brown", 35, new Vector2(0, 0)))
+  if (enemies._components.size > 5) {
+    return
+  }
+  enemies.Add(new Enemy(screen.RandomCoord({outside: true}), "brown", 35, new Vector2(0, 0), enemies))
 }, 1000)
 
 addEventListener('click', (ev) => {

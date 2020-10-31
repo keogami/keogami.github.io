@@ -1,3 +1,5 @@
+import { Vector2 } from "../System.js"
+
 class Projectile {
   constructor(coord, color, size, velocity) {
     this.coord = coord.Clone()
@@ -12,6 +14,15 @@ class Projectile {
 
     if (!screen.InBound(this.coord)) {
       screen.GetComponent("projectiles").Remove(this)
+    }
+
+    for (let enemy of screen.GetComponent("enemies").All()) {
+      const max = (this.size + enemy.size)
+
+      if (Vector2.Dist(enemy.coord, this.coord) <= max) {
+        enemy.Hit()
+        screen.GetComponent("projectiles").Remove(this)
+      }
     }
   }
 

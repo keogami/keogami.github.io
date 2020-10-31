@@ -24,6 +24,10 @@ class Vector2 {
     const ang = Math.atan2(to.y - from.y, to.x - from.x)
     return new Vector2(Math.cos(ang), Math.sin(ang))
   }
+
+  static Dist(from, to) {
+    return Math.hypot(from.x - to.x, from.y - to.y)
+  }
 }
 
 class Coord extends Vector2 {

@@ -1,11 +1,16 @@
 import { Vector2 } from "../System.js"
 
 class Enemy {
-  constructor(coord, color, size, velocity) {
+  constructor(coord, color, size, velocity, compSet) {
     this.coord = coord.Clone()
     this.color = color
     this.size = size
     this.velocity = velocity
+    this._compSet = compSet
+  }
+
+  Hit() {
+    this._compSet.Remove(this)
   }
 
   Update({ screen }) {
