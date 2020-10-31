@@ -1,6 +1,6 @@
 class Reticle {
   constructor(coord, color, size) {
-    this.coord = coord
+    this.coord = coord.Clone()
     this.color = color
     this.size = size
     this._currentSize = size

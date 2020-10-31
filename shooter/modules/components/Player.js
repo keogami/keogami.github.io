@@ -2,7 +2,7 @@ import { Coord } from "../System.js"
 
 class Player {
   constructor(coord, size, color, velocity) {
-    this.coord = new Coord(coord.x, coord.y)
+    this.coord = coord.Clone()
     this.size = size
     this.color = color
     this.velocity = velocity
