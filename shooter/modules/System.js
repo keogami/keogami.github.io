@@ -36,4 +36,16 @@ class InfoDict {
   }
 }
 
-export { Vector2, Coord, InfoDict }
+class Time {
+  constructor(stamp) {
+    this.value = stamp
+  }
+  static Now() {
+    return new Time(Date.now())
+  }
+  static Since(t) {
+    return new Time(Date.now() - t.value)
+  }
+}
+
+export { Vector2, Coord, InfoDict, Time }
