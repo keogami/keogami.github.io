@@ -6,9 +6,13 @@ class Projectile {
     this.velocity = velocity
   }
 
-  Update() {
+  Update({ screen }) {
     this.coord.x += this.velocity.x
     this.coord.y += this.velocity.y
+
+    if (!screen.InBound(this.coord)) {
+      screen.GetComponent("projectiles").Remove(this)
+    }
   }
 
   Draw({ ctx }) {
