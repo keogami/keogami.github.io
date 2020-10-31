@@ -95,6 +95,7 @@ function frame() {
 
   if (took.value >= requiredTime) {
     requestAnimationFrame(frame)
+    DEBUG && info.Set("Wait", "00ms")
   } else {
     DEBUG && info.Set("Wait", `${Math.round(requiredTime - took.value)}ms`)
     setTimeout(() => requestAnimationFrame(frame), requiredTime - took.value)
