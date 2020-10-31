@@ -1,6 +1,8 @@
+import { Coord } from "../System.js"
+
 class Player {
   constructor(coord, size, color, velocity) {
-    this.coord = coord
+    this.coord = new Coord(coord.x, coord.y)
     this.size = size
     this.color = color
     this.velocity = velocity
