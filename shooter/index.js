@@ -1,7 +1,7 @@
 import { Screen, ComponentSet } from "./modules/Screen.js";
-import { Vector2, InfoDict, Time } from "./modules/System.js";
+import { Vector2, InfoDict, Time, Coord } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
-import { Player, Reticle, Projectile } from "./modules/Components.js"
+import { Player, Reticle, Projectile, Enemy } from "./modules/Components.js"
 
 const $ = document
 const DEBUG = true
@@ -23,6 +23,11 @@ screen.AddComponent("reticle", reticle)
 const projectiles = new ComponentSet()
 screen.AddComponent("projectiles", projectiles)
 
+const enemies = new ComponentSet()
+screen.AddComponent("enemies", enemies)
+
+enemies.Add(new Enemy(new Coord(90, 90), "brown", 35, new Vector2(0, 0)))
+
 addEventListener('click', (ev) => {
   const vel = Vector2.Slope(player.coord, reticle.coord).Scale(16)
   projectiles.Add(new Projectile(player.coord, "pink", 8, vel))
@@ -38,7 +43,7 @@ let timeAVG = 0
 let FPS = 0
 
 const requiredFPS = 60
-const requiredTime = 1000 / requiredFPS
+const requiredTime = 1000 / requiredFPS // In ms
 
 let frameEndTime = null
 
