@@ -7,10 +7,22 @@ class Vector2 {
   Add(v2) {
     this.x += v2.x
     this.y += v2.y
+    return this
+  }
+
+  Scale(by) {
+    this.x *= by
+    this.y *= by
+    return this
   }
 
   Clone() {
     return new Vector2(this.x, this.y)
+  }
+
+  static Slope(from, to) {
+    const ang = Math.atan2(to.y - from.y, to.x - from.x)
+    return new Vector2(Math.cos(ang), Math.sin(ang))
   }
 }
 
