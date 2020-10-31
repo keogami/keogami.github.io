@@ -8,11 +8,19 @@ class Vector2 {
     this.x += v2.x
     this.y += v2.y
   }
+
+  Clone() {
+    return new Vector2(this.x, this.y)
+  }
 }
 
 class Coord extends Vector2 {
   constructor(x, y) {
     super(x, y)
+  }
+
+  Clone() {
+    return new Coord(this.x, this.y)
   }
 }
 
