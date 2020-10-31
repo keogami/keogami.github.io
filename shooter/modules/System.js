@@ -16,4 +16,24 @@ class Coord extends Vector2 {
   }
 }
 
-export { Vector2, Coord }
+class InfoDict {
+  constructor() {
+    this._map = new Map()
+  }
+
+  Set(key, value) {
+    this._map.set(key, value)
+    return this
+  }
+
+  String(del) {
+    let out = ""
+    for (let [key, value] of this._map) {
+      out += (out === "") ? "" : del
+      out += `${key}: ${value}`
+    }
+    return out
+  }
+}
+
+export { Vector2, Coord, InfoDict }

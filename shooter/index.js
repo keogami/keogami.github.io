@@ -1,8 +1,14 @@
 import { Screen } from "./modules/Screen.js";
-import { Vector2 } from "./modules/System.js";
+import { Vector2, InfoDict } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
 
 const $ = document
+const DEBUG = true
+
+const putInfo = ((el) => (it) => {
+  return el.innerText = it
+})($.querySelector("div#info-pane"))
+
 
 class Player {
   constructor(coord, size, color, velocity) {
@@ -11,7 +17,7 @@ class Player {
     this.color = color
     this.velocity = velocity
   }
-  
+
   Update(data) {
     const keys = data.keys
     if (keys.up) {
@@ -53,10 +59,16 @@ const keys = new Keyboard()
 keys.Connect(window)
 const mouse = new Mouse()
 mouse.Connect(window)
+const info = new InfoDict()
 
 function frame() {
   if (keys.escape) {
     return
+  }
+  if (DEBUG) {
+    info.Set("Mouse-X", mouse.coord.x)
+    info.Set("Mouse-Y", mouse.coord.y)
+    putInfo(info.String("\n"))
   }
   screen.Update({ keys, mouse })
   screen.Draw()
