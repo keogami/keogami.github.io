@@ -24,7 +24,7 @@ const projectiles = new ComponentSet()
 screen.AddComponent("projectiles", projectiles)
 
 addEventListener('click', (ev) => {
-  const vel = Vector2.Slope(player.coord, reticle.coord)
+  const vel = Vector2.Slope(player.coord, reticle.coord).Scale(16)
   projectiles.Add(new Projectile(player.coord, "pink", 8, vel))
 })
 
