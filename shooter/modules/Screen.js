@@ -57,6 +57,16 @@ class Screen {
     this.origin.y = height / 2
   }
 
+  InBound(coord) {
+    if (coord.x < 0 || coord.x > this._canvas.width) {
+      return false
+    }
+    if (coord.y < 0 || coord.y > this._canvas.height) {
+      return false
+    }
+    return true
+  }
+
   SetBackground(color) {
     this._canvas.style.backgroundColor = color
   }
