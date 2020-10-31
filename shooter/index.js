@@ -15,10 +15,10 @@ screen.Resize(innerWidth, innerHeight)
 screen.SetBackground("black")
 
 const p = new Player(screen.origin, 25, "#a80707", new Vector2(8, 8))
-screen.AddComponent(p)
+screen.AddComponent("player", p)
 
 const r = new Reticle(screen.origin, "blue", 15)
-screen.AddComponent(r)
+screen.AddComponent("reticle", r)
 
 
 const keys = new Keyboard()

@@ -15,7 +15,7 @@ class Screen {
     this._canvas = canvas
     this.ctx = canvas.getContext("2d")
     this.origin = new Coord(canvas.width / 2, canvas.height / 2)
-    this._components = new Set()
+    this._components = new Map()
   }
 
   Resize(width, height) {
@@ -29,16 +29,21 @@ class Screen {
     this._canvas.style.backgroundColor = color
   }
 
-  AddComponent(it) {
-    this._components.add(it)
+  AddComponent(name, it) {
+    this._components.set(name, it)
+    console.log(this._components)
   }
 
-  RemoveComponent(it) {
-    return this._components.delete(it)
+  GetComponent(name) {
+    return this._components.get(name)
+  }
+
+  RemoveComponent(name) {
+    return this._components.delete(name)
   }
 
   Update(data) {
-    for (let comp of this._components) {
+    for (let [ name, comp ] of this._components) {
       comp.Update && comp.Update(data)
     } 
   }
@@ -49,7 +54,7 @@ class Screen {
 
   Draw() {
     this.Clear()
-    for (let comp of this._components) {
+    for (let [ name, comp ] of this._components) {
       comp.Draw(this)
     }
   }
