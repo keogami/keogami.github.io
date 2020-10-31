@@ -1,7 +1,7 @@
 import { Screen } from "./modules/Screen.js";
 import { Vector2, InfoDict, Time } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
-import { Player } from "./modules/Components.js"
+import { Player, Reticle } from "./modules/Components.js"
 
 const $ = document
 const DEBUG = true
@@ -14,8 +14,11 @@ const screen = new Screen($.querySelector("canvas#main"))
 screen.Resize(innerWidth, innerHeight)
 screen.SetBackground("black")
 
-const p = new Player(screen.origin, 25, "#a80707", new Vector2(6, 6))
+const p = new Player(screen.origin, 25, "#a80707", new Vector2(8, 8))
 screen.AddComponent(p)
+
+const r = new Reticle(screen.origin, "blue", 15)
+screen.AddComponent(r)
 
 
 const keys = new Keyboard()
