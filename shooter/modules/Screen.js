@@ -25,9 +25,9 @@ class ComponentSet {
     }
   }
 
-  Draw() {
+  Draw(screen) {
     for (let comp of this._components) {
-      comp.Draw()
+      comp.Draw(screen)
     }
   }
 }
