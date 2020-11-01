@@ -65,10 +65,10 @@ class Time {
     this.value = stamp
   }
   static Now() {
-    return new Time(Date.now())
+    return new Time(performance.now())
   }
   static Since(t) {
-    return new Time(Date.now() - t.value)
+    return new Time(performance.now() - t.value)
   }
 }
 
