@@ -13,8 +13,12 @@ class Enemy {
     this._compSet.Remove(this)
   }
 
-  Update({ screen }) {
-    this.velocity = Vector2.Slope(this.coord, screen.GetComponent("player").coord).Scale(5)
+  Update({ screen, game }) {
+    const p = screen.GetComponent("player")
+    if (Vector2.Dist(this.coord, p.coord) <= (this.size + p.size)) {
+      game.state = Game.STATE_END
+    }
+    this.velocity = Vector2.Slope(this.coord, p.coord).Scale(5)
     this.coord.Add(this.velocity)
   }
 

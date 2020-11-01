@@ -54,6 +54,7 @@ const requiredTime = 1000 / requiredFPS // In ms
 let frameEndTime = null
 
 const game = new Game()
+game.state = Game.STATE_RUNNING
 
 function frame() {
   if (keys.escape || game.state === Game.STATE_END) {
