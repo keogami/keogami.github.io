@@ -58,7 +58,7 @@ game.state = Game.STATE_RUNNING
 
 function frame() {
   if (keys.escape || game.state === Game.STATE_END) {
-    alert(game.score)
+    alert(`you scored ${game.score} points`)
     return
   }
   frameEndTime = frameEndTime ?? Time.Now() // for the first frame, endtime is null

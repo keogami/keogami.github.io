@@ -1,4 +1,5 @@
 import { Vector2 } from "../System.js"
+import { Game } from "../Game.js"
 
 class Enemy {
   constructor(coord, color, size, velocity, compSet) {
