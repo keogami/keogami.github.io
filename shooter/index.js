@@ -48,13 +48,9 @@ const info = new InfoDict()
 let timeAVG = 0
 let FPS = 0
 
-const requiredFPS = 60
-const requiredTime = 1000 / requiredFPS // In ms
-
-let frameEndTime = null
-
 const game = new Game()
 game.state = Game.STATE_RUNNING
+let frameEndTime
 
 function frame() {
   if (keys.escape || game.state === Game.STATE_END) {
@@ -83,15 +79,8 @@ function frame() {
     putInfo(info.String("\n"))
   }
 
-  if (took.value >= requiredTime) {
-    requestAnimationFrame(frame)
-    DEBUG && info.Set("Wait", "00ms")
-  } else {
-    DEBUG && info.Set("Wait", `${Math.round(requiredTime - took.value)}ms`)
-    setTimeout(() => requestAnimationFrame(frame), requiredTime - took.value)
-  }
-
   frameEndTime = Time.Now()
+  requestAnimationFrame(frame)  
 }
 
-frame()
+requestAnimationFrame(frame)
