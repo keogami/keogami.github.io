@@ -1,37 +1,5 @@
 import { Coord } from "./System.js"
 
-// ComponentSet allows a set of components to be grouped together
-class ComponentSet {
-  constructor() {
-    this._components = new Set()
-  }
-
-  Add(it) {
-    this._components.add(it)
-    return this
-  }
-
-  Remove(it) {
-    return this._components.delete(it)
-  }
-
-  All() {
-    return this._components
-  }
-
-  Update(data) {
-    for (let comp of this._components) {
-      comp.Update(data)
-    }
-  }
-
-  Draw(screen) {
-    for (let comp of this._components) {
-      comp.Draw(screen)
-    }
-  }
-}
-
 // Screen handles the game's interaction with the canvas
 // it keeps the list of component that are "drawn" on the screen
 // the components can inserted and deleted from the screen

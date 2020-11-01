@@ -1,7 +1,7 @@
-import { Screen, ComponentSet } from "./modules/Screen.js";
-import { Vector2, InfoDict, Time, Coord } from "./modules/System.js";
+import { Screen } from "./modules/Screen.js";
+import { Vector2, InfoDict, Time } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
-import { Player, Reticle, Projectile, Enemy } from "./modules/Components.js"
+import { Player, Reticle, Projectile, Enemy, ComponentSet } from "./modules/Components.js"
 
 const $ = document
 const DEBUG = true
