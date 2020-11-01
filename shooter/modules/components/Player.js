@@ -1,5 +1,6 @@
 import { Coord } from "../System.js"
 import { Game } from "../Game.js"
+import { Health } from "./helpers/Health.js"
 
 class Player {
   constructor(coord, size, color, velocity) {
@@ -7,9 +8,7 @@ class Player {
     this.size = size
     this.color = color
     this.velocity = velocity
-    this._HP = 100
-    this._maxHP = 100
-    this.health = this._HP / this._maxHP
+    this.health = new Health(100)
   }
 
   Update({ keys, game}) {
@@ -31,14 +30,12 @@ class Player {
 
     // HP deduction on idle, and regeneration on moving
     if (!(keys.up || keys.down || keys.right || keys.left)) { // idle
-      if (this.health > 0.2) {
-        this._HP -= 0.25
-        this.health = this._HP / this._maxHP
+      if (this.health.value > 0.2) {
+        this.health.Add(-0.25)
       }
     } else {
-      if (this.health < 1.0) {
-        this._HP += 1.5
-        this.health = this._HP / this._maxHP
+      if (this.health.value < 1.0) {
+        this.health.Add(1.5)
       }
     }
   }
@@ -54,7 +51,7 @@ class Player {
     ctx.lineWidth = 3
 
     ctx.beginPath()
-    ctx.arc(this.coord.x, this.coord.y, this.size + 5, 0, Math.PI * 2 * this.health)
+    ctx.arc(this.coord.x, this.coord.y, this.size + 5, 0, Math.PI * 2 * this.health.value)
     ctx.stroke()
     ctx.closePath()
 
