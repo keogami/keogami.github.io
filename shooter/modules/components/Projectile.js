@@ -22,6 +22,7 @@ class Projectile {
       if (Vector2.Dist(enemy.coord, this.coord) <= max) {
         enemy.Hit()
         screen.GetComponent("projectiles").Remove(this)
+        break
       }
     }
   }
