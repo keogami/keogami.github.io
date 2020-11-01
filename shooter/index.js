@@ -2,6 +2,7 @@ import { Screen } from "./modules/Screen.js";
 import { Vector2, InfoDict, Time } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, Enemy, ComponentSet } from "./modules/Components.js"
+import { Game } from "./modules/Game.js"
 
 const $ = document
 const DEBUG = true
@@ -52,8 +53,11 @@ const requiredTime = 1000 / requiredFPS // In ms
 
 let frameEndTime = null
 
+const game = new Game()
+
 function frame() {
-  if (keys.escape) {
+  if (keys.escape || game.state === Game.STATE_END) {
+    alert(game.score)
     return
   }
   frameEndTime = frameEndTime ?? Time.Now() // for the first frame, endtime is null
@@ -62,7 +66,7 @@ function frame() {
 
   // Update and draw the screen
   const start = Time.Now()
-  screen.Update({ keys, mouse, elapsedTime, screen })
+  screen.Update({ game, keys, mouse, elapsedTime, screen })
   screen.Draw()
   const took = Time.Since(start)
 
