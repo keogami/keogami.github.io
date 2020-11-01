@@ -86,4 +86,4 @@ class Screen {
   }
 }
 
-export { Screen, ComponentSet }
+export { Screen }
