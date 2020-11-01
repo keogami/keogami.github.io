@@ -79,6 +79,7 @@ function frame() {
     info.Set("Mouse-X", mouse.coord.x)
     info.Set("Mouse-Y", mouse.coord.y)
     info.Set("FPS", FPS)
+    info.Set("Elapsed", `${elapsedTime.value}ms`)
     putInfo(info.String("\n"))
   }
 
