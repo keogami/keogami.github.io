@@ -49,15 +49,19 @@ class Player {
       this.coord.x -= this.velocity.x
     }
 
-    // HP deduction on idle, and regeneration on moving
-    if (!(keys.up || keys.down || keys.right || keys.left)) { // idle
-      if (this.health.value > 0.2) {
-        this.health.Add(-0.25)
-      }
+    {
+      const newstate = (keys.up || keys.down || keys.right || keys.left) ? STATE_MOVING : STATE_IDLE
+      this._state.Shift(newstate)
+    }
+
+    if (this._state.Is(STATE_IDLE)) {
+      this._state.Shift(STATE_DRAINING)
+    }
+
+    if (this._state.Is(STATE_DRAINING)) {
+      (this.health.value >= 0.5) && this.health.Add(-0.25)
     } else {
-      if (this.health.value < 1.0) {
-        this.health.Add(1.5)
-      }
+      (this.health.value < 1.0) && this.health.Add(1.5)
     }
   }
 
