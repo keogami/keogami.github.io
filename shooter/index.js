@@ -74,6 +74,13 @@ function frame(highResTime) {
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
   if (keys.escape || game.state === Game.STATE_END) {
+    const animTime = 1000
+    setTimeout(() => {
+      setTimeout(() => {
+        scoreboard.classList.add("center")
+      }, animTime * 0.85)
+      requestAnimationFrame(screen.ClearAnimation(player.coord, "#07020b45", animTime))
+    }, 100)
     return
   }
 

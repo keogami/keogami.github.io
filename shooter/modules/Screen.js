@@ -84,6 +84,29 @@ class Screen {
       comp.Draw(this)
     }
   }
+
+  ClearAnimation(coord, color, dt) {
+    const endRad = Math.hypot(this._canvas.width, this._canvas.height)
+    let start = null
+    const { ctx } = this
+    const frame = function (time) {
+      start = start || time
+      const et = time - start
+      const rad = Math.min(endRad * (et / dt), endRad)
+      if (rad === endRad) {
+        return
+      }
+
+      ctx.beginPath()
+      ctx.fillStyle = color
+      ctx.arc(coord.x, coord.y, rad, 0, Math.PI * 2)
+      ctx.fill()
+      ctx.closePath()
+
+      requestAnimationFrame(frame)
+    }
+    return frame
+  }
 }
 
 export { Screen }
