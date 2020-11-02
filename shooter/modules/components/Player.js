@@ -10,7 +10,6 @@ const STATE_DRAINING = Symbol("draining")
 const playerStateTransitions = [
   [STATE_IDLE, STATE_MOVING],
   [STATE_IDLE, STATE_DRAINING],
-  [STATE_DRAINING, STATE_IDLE],
   [STATE_DRAINING, STATE_MOVING],
   [STATE_MOVING, STATE_IDLE],
 ]
