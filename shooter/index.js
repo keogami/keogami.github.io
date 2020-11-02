@@ -60,10 +60,6 @@ function frame(highResTime) {
   }
   const timestamp = highResTime - gameStartTime
   
-  if (keys.escape || game.state === Game.STATE_END) {
-    alert(`you scored ${game.score} points`)
-    return
-  }
   frameEndTime = frameEndTime ?? Time.Now() // for the first frame, endtime is null
 
   const elapsedTime = Time.Since(frameEndTime)
@@ -72,6 +68,10 @@ function frame(highResTime) {
   const start = Time.Now()
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
+  if (keys.escape || game.state === Game.STATE_END) {
+    alert(`you scored ${game.score} points`)
+    return
+  }
   const took = Time.Since(start)
 
   // if debug data is required, calculate it and print it
