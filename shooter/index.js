@@ -13,7 +13,7 @@ const putInfo = ((el) => (it) => {
 
 const screen = new Screen($.querySelector("canvas#main"))
 screen.Resize(innerWidth, innerHeight)
-screen.SetBackground("black")
+screen.SetBackground("#07020b")
 
 const player = new Player(screen.origin, 25, "#a80707", new Vector2(8, 8))
 screen.AddComponent("player", player)
