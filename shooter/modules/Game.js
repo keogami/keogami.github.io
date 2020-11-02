@@ -6,7 +6,17 @@ class Game {
   static STATE_PAUSE =   Symbol("pause")
   constructor() {
     this.state = Game.STATE_UNSET
-    this.score = 0
+    this._score = 0
+    this.onScoreUpdate = null
+  }
+
+  get score() {
+    return this._score
+  }
+
+  set score(val) {
+    this._score = val
+    this.onScoreUpdate && this.onScoreUpdate(val)
   }
 }
 
