@@ -11,8 +11,16 @@ class Player {
     this.health = new Health(100)
   }
 
+  Hit({ damage }) {
+    this.health.Add(-damage)
+    if (this.health.value <= 0) {
+      return true
+    }
+    return false
+  }
+
   Update({ keys, game}) {
-    if (this.health <= 0) {
+    if (this.health.value <= 0) {
       game.state = Game.STATE_END
       return
     }
