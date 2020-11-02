@@ -10,6 +10,7 @@ class Enemy {
     this.velocity = velocity
     this._compSet = compSet
     this.health = new Health(5)
+    this.damage = 20
   }
 
   Hit({ damage }) {
@@ -24,7 +25,12 @@ class Enemy {
   Update({ screen, game }) {
     const p = screen.GetComponent("player")
     if (Vector2.Dist(this.coord, p.coord) <= (this.size + p.size)) {
-      game.state = Game.STATE_END
+      const killed = p.Hit(this)
+      this._compSet.Remove(this)
+      if (killed) {
+        game.state = Game.STATE_END
+        return
+      }
     }
     this.velocity = Vector2.Slope(this.coord, p.coord).Scale(5)
     this.coord.Add(this.velocity)
