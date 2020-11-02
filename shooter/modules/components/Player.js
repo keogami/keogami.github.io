@@ -1,6 +1,19 @@
 import { Coord } from "../System.js"
 import { Game } from "../Game.js"
 import { Health } from "./helpers/Health.js"
+import { State } from "../State.js"
+
+const STATE_IDLE = Symbol("idle")
+const STATE_MOVING = Symbol("moving")
+const STATE_DRAINING = Symbol("draining")
+
+const playerStateTransitions = [
+  [STATE_IDLE, STATE_MOVING],
+  [STATE_IDLE, STATE_DRAINING],
+  [STATE_DRAINING, STATE_IDLE],
+  [STATE_DRAINING, STATE_MOVING],
+  [STATE_MOVING, STATE_IDLE],
+]
 
 class Player {
   constructor(coord, size, color, velocity) {
@@ -9,6 +22,7 @@ class Player {
     this.color = color
     this.velocity = velocity
     this.health = new Health(100)
+    this._state = new State(STATE_IDLE, playerStateTransitions)
   }
 
   Hit({ damage }) {
