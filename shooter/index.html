@@ -4,19 +4,36 @@
   body {
     margin: 0;
   }
-  div#info-pane {
+
+  div.data-pane {
     position: absolute;
-    top: 0;
-    left: 0;
     color: white;
     padding: 0.3em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+
+  div#info-pane {
+    left: 0;
+    top: 0;
+  }
+
+  div#scoreboard {
+    right: 0;
+    top: 0;
+    padding: 0.75em 0.75em;
+    border-left: 2px solid #31154d;
+    border-bottom: 2px solid #31154d;
+    color: #9a62d2;
+    border-radius: 0 0 0 10px;
+    background: #07020b;
+  }
+
   canvas {
-    transition: background-color ease-in 270ms; 
+    transition: background-color ease-in 270ms;
   }
 </style>
 
-<div id="info-pane"></div>
+<div class="data-pane" id="info-pane"></div>
+<div class="data-pane" id="scoreboard">KP=00000000000</div>
 
 <canvas id="main"></canvas>
