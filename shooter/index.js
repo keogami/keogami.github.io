@@ -52,7 +52,14 @@ const game = new Game()
 game.state = Game.STATE_RUNNING
 let frameEndTime
 
-function frame() {
+let gameStartTime
+
+function frame(highResTime) {
+  if (gameStartTime === undefined) {
+    gameStartTime = highResTime
+  }
+  const timestamp = highResTime - gameStartTime
+  
   if (keys.escape || game.state === Game.STATE_END) {
     alert(`you scored ${game.score} points`)
     return
@@ -63,7 +70,7 @@ function frame() {
 
   // Update and draw the screen
   const start = Time.Now()
-  screen.Update({ game, keys, mouse, elapsedTime, screen })
+  screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
   const took = Time.Since(start)
 
