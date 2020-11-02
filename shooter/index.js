@@ -65,14 +65,12 @@ function frame(highResTime) {
   const elapsedTime = Time.Since(frameEndTime)
 
   // Update and draw the screen
-  const start = Time.Now()
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
   if (keys.escape || game.state === Game.STATE_END) {
     alert(`you scored ${game.score} points`)
     return
   }
-  const took = Time.Since(start)
 
   // if debug data is required, calculate it and print it
   if (DEBUG) {
