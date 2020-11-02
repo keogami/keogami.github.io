@@ -50,6 +50,12 @@ let FPS = 0
 
 const game = new Game()
 game.state = Game.STATE_RUNNING
+
+const scoreboard = $.querySelector("div#scoreboard")
+game.onScoreUpdate = (val) => {
+  scoreboard.innerHTML = "KP=" + val.toString().padStart(16, "0")
+}
+
 let frameEndTime
 
 let gameStartTime
@@ -68,9 +74,10 @@ function frame(highResTime) {
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
   if (keys.escape || game.state === Game.STATE_END) {
-    alert(`you scored ${game.score} points`)
     return
   }
+
+
 
   // if debug data is required, calculate it and print it
   if (DEBUG) {
