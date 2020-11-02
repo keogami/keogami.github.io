@@ -22,6 +22,7 @@ class Player {
     this.velocity = velocity
     this.health = new Health(100)
     this._state = new State(STATE_IDLE, playerStateTransitions)
+    this._idleStartTime = null
   }
 
   Hit({ damage }) {
@@ -32,7 +33,7 @@ class Player {
     return false
   }
 
-  Update({ keys, game}) {
+  Update({ keys, game, timestamp }) {
     if (this.health.value <= 0) {
       game.state = Game.STATE_END
       return
@@ -55,13 +56,16 @@ class Player {
     }
 
     if (this._state.Is(STATE_IDLE)) {
-      this._state.Shift(STATE_DRAINING)
+      this._idleStartTime = this._idleStartTime ?? timestamp
+      if (timestamp - this._idleStartTime >= 4000) {
+        this._state.Shift(STATE_DRAINING)
+      }
+    } else {
+      this._idleStartTime = null
     }
 
     if (this._state.Is(STATE_DRAINING)) {
       (this.health.value >= 0.5) && this.health.Add(-0.25)
-    } else {
-      (this.health.value < 1.0) && this.health.Add(1.5)
     }
   }
 
