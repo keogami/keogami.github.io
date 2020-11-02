@@ -11,6 +11,7 @@ class Enemy {
     this._compSet = compSet
     this.health = new Health(5)
     this.damage = 20
+    this.score = 10
   }
 
   Hit({ damage }) {
