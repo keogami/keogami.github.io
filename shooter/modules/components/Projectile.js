@@ -9,7 +9,7 @@ class Projectile {
     this.damage = damage
   }
 
-  Update({ screen }) {
+  Update({ screen, game }) {
     this.coord.Add(this.velocity)
 
     if (!screen.InBound(this.coord)) {
@@ -20,7 +20,10 @@ class Projectile {
       const max = (this.size + enemy.size)
 
       if (Vector2.Dist(enemy.coord, this.coord) <= max) {
-        enemy.Hit(this)
+        const killed = enemy.Hit(this)
+        if (killed) {
+          game.score += enemy.score
+        }
         screen.GetComponent("projectiles").Remove(this)
         break
       }
