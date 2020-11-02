@@ -52,9 +52,10 @@ const game = new Game()
 game.state = Game.STATE_RUNNING
 
 const scoreboard = $.querySelector("div#scoreboard")
-game.onScoreUpdate = (val) => {
+const printScore = (val) => {
   scoreboard.innerHTML = "KP=" + val.toString().padStart(16, "0")
 }
+game.onScoreUpdate = printScore
 
 let frameEndTime
 
@@ -81,6 +82,8 @@ function frame(highResTime) {
       }, animTime * 0.85)
       requestAnimationFrame(screen.ClearAnimation(player.coord, "#07020b45", animTime))
     }, 100)
+
+    setInterval(printScore, 100, game.score) // to prevent people from changing score manually
     return
   }
 
