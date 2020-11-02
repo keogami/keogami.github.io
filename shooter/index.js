@@ -36,7 +36,7 @@ setInterval(() => {
 
 addEventListener('click', (ev) => {
   const vel = Vector2.Slope(player.coord, reticle.coord).Scale(16)
-  projectiles.Add(new Projectile(player.coord, "pink", 8, vel))
+  projectiles.Add(new Projectile(player.coord, "pink", 8, vel, 3))
 })
 
 

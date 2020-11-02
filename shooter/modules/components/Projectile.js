@@ -1,11 +1,12 @@
 import { Vector2 } from "../System.js"
 
 class Projectile {
-  constructor(coord, color, size, velocity) {
+  constructor(coord, color, size, velocity, damage) {
     this.coord = coord.Clone()
     this.color = color
     this.size = size
     this.velocity = velocity
+    this.damage = damage
   }
 
   Update({ screen }) {
@@ -19,7 +20,7 @@ class Projectile {
       const max = (this.size + enemy.size)
 
       if (Vector2.Dist(enemy.coord, this.coord) <= max) {
-        enemy.Hit()
+        enemy.Hit(this)
         screen.GetComponent("projectiles").Remove(this)
         break
       }
