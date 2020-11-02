@@ -12,8 +12,11 @@ class Enemy {
     this.health = new Health(5)
   }
 
-  Hit() {
-    this._compSet.Remove(this)
+  Hit({ damage }) {
+    this.health.Add(-damage)
+    if (this.health.value <= 0) {
+      this._compSet.Remove(this)
+    }
   }
 
   Update({ screen, game }) {
