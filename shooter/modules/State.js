@@ -16,6 +16,9 @@ class State {
   }
 
   Shift(to) {
+    if (this._current === to) {
+      return true
+    }
     if (!this._allowed.get(this._current).has(to)) {
       return false
     }
