@@ -10,6 +10,12 @@ class Vector2 {
     return this
   }
 
+  Diff(v2) {
+    this.x -= v2.x
+    this.y -= v2.y
+    return this
+  }
+
   Scale(by) {
     this.x *= by
     this.y *= by
