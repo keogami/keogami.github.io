@@ -24,6 +24,7 @@ class Game {
   }
 
   Run(stepper) {
+    this.state = Game.STATE_RUNNING
     let start = null
     let frameEndTime = null
     const frame = highResTime => {
