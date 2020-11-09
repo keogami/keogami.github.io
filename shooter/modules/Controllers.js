@@ -6,27 +6,47 @@ class Keyboard {
   }
   Connect(element) {
     element.addEventListener("keydown", (ev) => {
-      if (ev.key === "w") {
-        this.up = true
-      } else if (ev.key === "s") {
-        this.down = true
-      } else if (ev.key === "d") {
-        this.right = true
-      } else if (ev.key === "a") {
-        this.left = true
+      switch (ev.code) {
+        case "KeyW":
+        case "ArrowUp":
+          this.up = true
+          break
+        case "KeyA":
+        case "ArrowLeft":
+          this.left = true
+          break
+        case "KeyS":
+        case "ArrowDown":
+          this.down = true
+          break
+        case "KeyD":
+        case "ArrowRight":
+          this.right = true
+          break
       }
+      ev.preventDefault()
     })
     
     element.addEventListener("keyup", (ev) => {
-      if (ev.key === "w") {
-        this.up = false
-      } else if (ev.key === "s") {
-        this.down = false
-      } else if (ev.key === "d") {
-        this.right = false
-      } else if (ev.key === "a") {
-        this.left = false
+      switch (ev.code) {
+        case "KeyW":
+        case "ArrowUp":
+          this.up = false
+          break
+        case "KeyA":
+        case "ArrowLeft":
+          this.left = false
+          break
+        case "KeyS":
+        case "ArrowDown":
+          this.down = false
+          break
+        case "KeyD":
+        case "ArrowRight":
+          this.right = false
+          break
       }
+      ev.preventDefault()
     })
   }
 }
