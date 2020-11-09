@@ -1,11 +1,11 @@
 import { Screen } from "./modules/Screen.js";
-import { Vector2, InfoDict, Time } from "./modules/System.js";
+import { Vector2, InfoDict } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, Enemy, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
 
 const $ = document
-const DEBUG = true
+const DEBUG = false
 
 const putInfo = ((el) => (it) => {
   return el.innerText = it
@@ -57,20 +57,7 @@ const printScore = (val) => {
 }
 game.onScoreUpdate = printScore
 
-let frameEndTime
-
-let gameStartTime
-
-function frame(highResTime) {
-  if (gameStartTime === undefined) {
-    gameStartTime = highResTime
-  }
-  const timestamp = highResTime - gameStartTime
-  
-  frameEndTime = frameEndTime ?? Time.Now() // for the first frame, endtime is null
-
-  const elapsedTime = Time.Since(frameEndTime)
-
+function frame({ timestamp, elapsedTime}) {
   // Update and draw the screen
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
@@ -87,8 +74,6 @@ function frame(highResTime) {
     return
   }
 
-
-
   // if debug data is required, calculate it and print it
   if (DEBUG) {
     timeAVG += elapsedTime.value
@@ -100,9 +85,7 @@ function frame(highResTime) {
     info.Set("Elapsed", `${elapsedTime.value}ms`)
     putInfo(info.String("\n"))
   }
-
-  frameEndTime = Time.Now()
-  requestAnimationFrame(frame)  
+ 
 }
 
-requestAnimationFrame(frame)
+game.Run(frame)
