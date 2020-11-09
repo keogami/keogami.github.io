@@ -5,7 +5,7 @@ import { Player, Reticle, Projectile, Enemy, ComponentSet } from "./modules/Comp
 import { Game } from "./modules/Game.js"
 
 const $ = document
-const DEBUG = false
+const DEBUG = true
 
 const putInfo = ((el) => (it) => {
   return el.innerText = it
