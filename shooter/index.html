@@ -35,24 +35,78 @@
       border 800ms,
       border-radius 400ms 800ms,
       padding 400ms 800ms;
-    transition-timing-function: cubic-bezier(.83,.01,.37,1.39);
+    transition-timing-function: cubic-bezier(.83, .01, .37, 1.39);
   }
 
   div#scoreboard.center {
     right: 50%;
-    top: 50%;
     padding: 3em;
     border: 3px solid #31154d;
     border-radius: 20px;
-    transform: translate(50%, -50%);
+    transform: translate(50%, 20%);
   }
 
   canvas {
     transition: background-color ease-in 270ms;
   }
+
+  .game-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    padding: 0.5em;
+    font-family: monospace;
+    display: flex;
+    background: #8329cc;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    box-sizing: border-box;
+    opacity: 1;
+    cursor: pointer;
+
+    transition:
+      all cubic-bezier(.18,.89,.32,1.28) 340ms 40ms,
+      opacity linear 350ms 0ms;
+  }
+
+  .game-control #text {
+    align-self: center;
+    text-transform: uppercase;
+  }
+
+  .game-control #blinder {
+    position: absolute;
+    background: #07020b;
+    width: 4.5em;
+    height: 4.5em;
+    transition: all cubic-bezier(.18, .89, .32, 1.28) 450ms 0ms;
+    margin: -0.75em;
+    transform-origin: center;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+
+  #start.clicked {
+    width: 4.45em;
+    height: 4.45em;
+    padding: 0.725em;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #start.clicked #blinder {
+    transform: scale(1);
+  }
 </style>
 
 <div class="data-pane" id="info-pane"></div>
 <div class="data-pane" id="scoreboard">KP=0000000000000000</div>
+<div class="game-control" id="start">
+  <div id="text">Start</div>
+  <div id="blinder"></div>
+</div>
 
 <canvas id="main"></canvas>

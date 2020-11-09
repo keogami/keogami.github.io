@@ -27,17 +27,17 @@ screen.AddComponent("projectiles", projectiles)
 const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
-setInterval(() => {
+function spawnEnemies() {
   if (enemies._components.size > 5) {
     return
   }
   enemies.Add(new Enemy(screen.RandomCoord({outside: true}), "brown", 35, new Vector2(0, 0), enemies))
-}, 1000)
+}
 
-addEventListener('click', (ev) => {
+function shootProjectiles() {
   const vel = Vector2.Slope(player.coord, reticle.coord).Scale(16)
   projectiles.Add(new Projectile(player.coord, "pink", 8, vel, 3))
-})
+}
 
 
 const keys = new Keyboard()
@@ -88,4 +88,15 @@ function frame({ timestamp, elapsedTime}) {
  
 }
 
-game.Run(frame)
+function startGame() {
+  this.removeEventListener("click", startGame)
+  this.classList.add("clicked")
+
+  setTimeout(() => {
+    game.Run(frame)
+    addEventListener("click", shootProjectiles)
+    setInterval(spawnEnemies, 1000)
+  }, 500)
+}
+
+$.querySelector("div.game-control").addEventListener("click", startGame)
