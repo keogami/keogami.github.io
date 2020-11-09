@@ -4,6 +4,7 @@
   body {
     margin: 0;
     background: rgb(40, 34, 45);
+    overflow: hidden;
   }
 
   div.data-pane {
@@ -36,6 +37,19 @@
       border-radius 400ms 800ms,
       padding 400ms 800ms;
     transition-timing-function: cubic-bezier(.83, .01, .37, 1.39);
+    animation: fade forwards linear 1200ms 0ms;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    20%, 80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   div#scoreboard.center {
@@ -44,6 +58,7 @@
     border: 3px solid #31154d;
     border-radius: 20px;
     transform: translate(50%, 20%);
+    animation: none;
   }
 
   canvas {
