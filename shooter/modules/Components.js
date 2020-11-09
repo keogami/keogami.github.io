@@ -24,6 +24,10 @@ class ComponentSet {
     return this._components
   }
 
+  Clear() {
+    this._components.clear()
+  }
+
   Update(data) {
     for (let comp of this._components) {
       comp.Update(data)
