@@ -19,6 +19,10 @@ class Vector2 {
   Clone() {
     return new Vector2(this.x, this.y)
   }
+  
+  Hypot() {
+    return Math.hypot(this.x, this.y)
+  }
 
   static Slope(from, to) {
     const ang = Math.atan2(to.y - from.y, to.x - from.x)
