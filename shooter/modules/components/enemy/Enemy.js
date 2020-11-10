@@ -33,6 +33,7 @@ class Enemy {
     if (Vector2.Dist(this.coord, p.coord) <= (this.size + p.size)) {
       const killed = p.Hit(this)
       this._compSet.Remove(this)
+      this.events.Emit(Enemy.EVENT_DEATH, this)
       if (killed) {
         game.state = Game.STATE_END
         return
