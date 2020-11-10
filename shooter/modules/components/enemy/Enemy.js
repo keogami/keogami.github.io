@@ -1,6 +1,6 @@
-import { Vector2 } from "../System.js"
-import { Game } from "../Game.js"
-import { Health } from "./helpers/Health.js"
+import { Vector2 } from "../../System.js"
+import { Game } from "../../Game.js"
+import { Health } from "../helpers/Health.js"
 
 class Enemy {
   constructor(coord, color, size, velocity, compSet) {

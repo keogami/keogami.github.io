@@ -1,8 +1,9 @@
 import { Screen } from "./modules/Screen.js";
 import { Vector2, InfoDict } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
-import { Player, Reticle, Projectile, Enemy, ComponentSet } from "./modules/Components.js"
+import { Player, Reticle, Projectile, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
+import { Enemy } from "./modules/components/Enemies.js"
 
 const $ = document
 const DEBUG = true
