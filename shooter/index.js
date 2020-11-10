@@ -3,7 +3,7 @@ import { Vector2, InfoDict } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
-import { Normie, Leecher } from "./modules/components/Enemies.js"
+import { Normie, Leecher, Healer } from "./modules/components/Enemies.js"
 import { Enemy } from "./modules/components/enemy/Enemy.js";
 
 const $ = document
@@ -26,7 +26,7 @@ screen.AddComponent("projectiles", projectiles)
 const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
-const enemyList = [Normie, Leecher]
+const enemyList = [Normie, Leecher, Healer]
 function spawnEnemies() {
   if (enemies._components.size > 5) {
     return
