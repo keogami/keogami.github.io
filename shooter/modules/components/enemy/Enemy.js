@@ -1,8 +1,10 @@
 import { Vector2 } from "../../System.js"
 import { Game } from "../../Game.js"
 import { Health } from "../helpers/Health.js"
+import { Event } from "../helpers/Event.js"
 
 class Enemy {
+  static EVENT_DEATH = Symbol("Death")
   constructor(coord, color, size, speed, compSet) {
     this.coord = coord.Clone()
     this.color = color
@@ -12,12 +14,15 @@ class Enemy {
     this.health = new Health(5)
     this.damage = 20
     this.score = 10
+
+    this.events = new Event()
   }
 
   Hit({ damage }) {
     this.health.Add(-damage)
     if (this.health.value <= 0) {
       this._compSet.Remove(this)
+      this.events.Emit(Enemy.Event_Death, this)
       return true
     }
     return false
