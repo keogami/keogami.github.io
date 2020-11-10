@@ -5,15 +5,15 @@ import { Event } from "../helpers/Event.js"
 
 class Enemy {
   static EVENT_DEATH = Symbol("Death")
-  constructor(coord, color, size, speed, compSet) {
+  constructor(coord, color, size, speed, health, damage, score, compSet) {
     this.coord = coord.Clone()
     this.color = color
     this.size = size
     this.speed = speed
     this._compSet = compSet
-    this.health = new Health(5)
-    this.damage = 20
-    this.score = 10
+    this.health = new Health(health)
+    this.damage = damage
+    this.score = score
 
     this.events = new Event()
   }

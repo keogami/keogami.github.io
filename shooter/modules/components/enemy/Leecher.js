@@ -4,7 +4,7 @@ const taken = new WeakSet()
 
 class Leecher extends Enemy {
   constructor(coord, compSet) {
-    super(coord, "yellow", 27, 6, compSet)
+    super(coord, "yellow", 27, 6, 5, 10, 20, compSet)
     this.host = null
     let min = null
 
