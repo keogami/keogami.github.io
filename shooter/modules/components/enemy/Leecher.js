@@ -19,14 +19,21 @@ class Leecher extends Enemy {
         this.host = enemy
       }
     }
-    taken.add(this.host)
+    if (this.host) {
+      taken.add(this.host)
+      const call = () => {
+        this.host.events.Remove(Enemy.EVENT_DEATH, call)
+        this.host = null
+      }
+      this.host.events.On(Enemy.EVENT_DEATH, call)
+      this.host.events.On(Enemy.EVENT_DEATH, console.log)
+    }
   }
 
   Hit(damageData) {
     if (this.host) {
-      const killed = this.host.Hit(damageData)
-      this.host = (killed) ? null : this.host
-      return false
+      this.host.Hit(damageData)
+      return
     }
     return super.Hit(damageData)
   }
