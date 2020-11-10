@@ -6,13 +6,14 @@ class Event {
   On(eventSym, callback) {
     if (this._map.has(eventSym)) {
       this._map.get(eventSym).add(callback)
+      return
     }
     this._map.set(eventSym, new Set([callback]))
   }
 
   Remove(eventSym, callback) {
     if (this._map.has(eventSym)) {
-      this._map.get(eventSym).remove(callback)
+      this._map.get(eventSym).delete(callback)
     }
   }
 
