@@ -3,7 +3,8 @@ import { Vector2, InfoDict } from "./modules/System.js";
 import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
-import { Enemy } from "./modules/components/Enemies.js"
+import { Normie, Leecher } from "./modules/components/Enemies.js"
+import { Enemy } from "./modules/components/enemy/Enemy.js";
 
 const $ = document
 const DEBUG = true
@@ -25,11 +26,15 @@ screen.AddComponent("projectiles", projectiles)
 const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
+const enemyList = [Normie, Leecher]
 function spawnEnemies() {
   if (enemies._components.size > 5) {
     return
   }
-  enemies.Add(new Enemy(screen.RandomCoord({ outside: true }), "brown", 35, 5, enemies))
+  const coord = screen.RandomCoord({ outside: true })
+
+  const rand = Math.floor(Math.random() * enemyList.length)
+  enemies.Add(new enemyList[rand](coord, enemies))
 }
 let stopSpawning = null
 
