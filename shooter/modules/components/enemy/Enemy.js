@@ -3,11 +3,11 @@ import { Game } from "../../Game.js"
 import { Health } from "../helpers/Health.js"
 
 class Enemy {
-  constructor(coord, color, size, velocity, compSet) {
+  constructor(coord, color, size, speed, compSet) {
     this.coord = coord.Clone()
     this.color = color
     this.size = size
-    this.velocity = velocity
+    this.speed = speed
     this._compSet = compSet
     this.health = new Health(5)
     this.damage = 20
@@ -33,8 +33,8 @@ class Enemy {
         return
       }
     }
-    this.velocity = Vector2.Slope(this.coord, p.coord).Scale(5)
-    this.coord.Add(this.velocity)
+    const velocity = Vector2.Slope(this.coord, p.coord).Scale(this.speed)
+    this.coord.Add(velocity)
   }
 
   Draw({ ctx }) {

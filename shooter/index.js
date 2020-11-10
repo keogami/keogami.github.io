@@ -29,7 +29,7 @@ function spawnEnemies() {
   if (enemies._components.size > 5) {
     return
   }
-  enemies.Add(new Enemy(screen.RandomCoord({ outside: true }), "brown", 35, new Vector2(0, 0), enemies))
+  enemies.Add(new Enemy(screen.RandomCoord({ outside: true }), "brown", 35, 5, enemies))
 }
 let stopSpawning = null
 
