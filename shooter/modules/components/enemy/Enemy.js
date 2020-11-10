@@ -22,7 +22,7 @@ class Enemy {
     this.health.Add(-damage)
     if (this.health.value <= 0) {
       this._compSet.Remove(this)
-      this.events.Emit(Enemy.Event_Death, this)
+      this.events.Emit(Enemy.EVENT_DEATH, this)
       return true
     }
     return false
