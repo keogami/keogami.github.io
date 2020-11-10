@@ -16,7 +16,7 @@ const screen = new Screen($.querySelector("canvas#main"))
 screen.Resize(innerWidth, innerHeight)
 screen.SetBackground("#07020b")
 
-const reticle = new Reticle(screen.origin, "blue", 15)
+const reticle = new Reticle(screen.origin, "#ac35ac", 15)
 screen.AddComponent("reticle", reticle)
 
 const projectiles = new ComponentSet()
@@ -120,7 +120,7 @@ function startGame() {
   this.classList.add("clicked")
   scorePrintingIntervalHandle ?? clearInterval(scorePrintingIntervalHandle)
 
-  screen.AddComponent("player", new Player(screen.origin, 25, "#a80707", new Vector2(8, 8)))
+  screen.AddComponent("player", new Player(screen.origin, 25, "#ac35ac", new Vector2(8, 8)))
   screen.GetComponent("projectiles").Clear()
   screen.GetComponent("enemies").Clear()
   game.score = 0
