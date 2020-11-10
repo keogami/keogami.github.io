@@ -4,7 +4,6 @@ import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
 import { Normie, Leecher, Healer } from "./modules/components/Enemies.js"
-import { Enemy } from "./modules/components/enemy/Enemy.js";
 
 const $ = document
 const DEBUG = true
@@ -26,15 +25,22 @@ screen.AddComponent("projectiles", projectiles)
 const enemies = new ComponentSet()
 screen.AddComponent("enemies", enemies)
 
-const enemyList = [Normie, Leecher, Healer]
 function spawnEnemies() {
   if (enemies._components.size > 5) {
     return
   }
   const coord = screen.RandomCoord({ outside: true })
 
-  const rand = Math.floor(Math.random() * enemyList.length)
-  enemies.Add(new enemyList[rand](coord, enemies))
+  const rand = Math.random()
+  let enemy
+  if (rand <= 0.06) {
+    enemy = Healer
+  } else if (rand <= 0.36) {
+    enemy = Leecher
+  } else {
+    enemy = Normie
+  }
+  enemies.Add(new enemy(coord, enemies))
 }
 let stopSpawning = null
 
