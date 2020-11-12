@@ -26,7 +26,6 @@ class Leecher extends Enemy {
         this.host = null
       }
       this.host.events.On(Enemy.EVENT_DEATH, call)
-      this.host.events.On(Enemy.EVENT_DEATH, console.log)
     }
   }
 
