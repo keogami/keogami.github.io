@@ -4,6 +4,7 @@ import { Keyboard, Mouse } from "./modules/Controllers.js";
 import { Player, Reticle, Projectile, ComponentSet } from "./modules/Components.js"
 import { Game } from "./modules/Game.js"
 import { Normie, Leecher, Healer } from "./modules/components/Enemies.js"
+import { Mine } from "./modules/components/Mine.js";
 
 const $ = document
 const DEBUG = true
@@ -68,7 +69,16 @@ const printScore = (val) => {
 }
 game.onScoreUpdate = printScore
 
+let mine = null
+
 function frame({ timestamp, elapsedTime }) {
+  if (mine === null) {
+    const mines = new ComponentSet()
+    screen.AddComponent("mines", mines)
+    const coord = screen.RandomCoord({ outside: false })
+    mine = new Mine(coord, 0x00FF00, 28, 100, 5, timestamp, 2000, mines)
+    mines.Add(mine)
+  }
   // Update and draw the screen
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
@@ -123,6 +133,7 @@ function startGame() {
   screen.AddComponent("player", new Player(screen.origin, 25, "#ac35ac", new Vector2(8, 8)))
   screen.GetComponent("projectiles").Clear()
   screen.GetComponent("enemies").Clear()
+
   game.score = 0
 
   setTimeout(() => {
