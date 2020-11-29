@@ -38,8 +38,10 @@ class Chart {
 
   get drawableRegion() {
     return {
+      // for y, `to` and `from` are swapped (unlike x) because it is more intuitive
+      // to have the positive side go from bottom(origin) to top.
       x: { from: this.margin, to: this.width - this.margin },
-      y: { from: this.margin, to: this.height - this.margin },
+      y: { from: this.height - this.margin, to: this.margin  },
     }
   }
 
