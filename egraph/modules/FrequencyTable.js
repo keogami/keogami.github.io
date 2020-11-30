@@ -16,7 +16,7 @@ class FrequencyTable {
     // however, it is quite readable as it stands now.
 
     // create the classes
-    for (let cur = min; cur < max; cur += csize) {
+    for (let cur = min; cur <= max; cur += csize) {
       classes.add(new Class(cur, cur + csize))
     }
 
