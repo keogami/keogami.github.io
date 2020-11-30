@@ -38,6 +38,10 @@ class FrequencyTable {
   Classes() {
     return this._classes
   }
+
+  MaxFrequency() {
+    return [...this.Classes()].reduce((acc, it) => (it.length > acc.length) ? it : acc).length
+  }
 }
 
 export { FrequencyTable }
