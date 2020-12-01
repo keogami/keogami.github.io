@@ -27,3 +27,5 @@ class Drawable {
     throw new Error('DrawOn must be implemented by the derivative classes')
   }
 }
+
+export { Drawable }
