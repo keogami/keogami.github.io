@@ -68,7 +68,6 @@ class FrequencyPolygon extends Drawable {
     const adjust = adjustWithOrigin(o)
     const points = [...generatePoints({ table, fixtures })].map(adjust)
 
-    console.log(points)
     ctx.save()
     ctx.strokeStyle = this._color
     ctx.fillStyle = this._color
