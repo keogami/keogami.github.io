@@ -1,6 +1,6 @@
 import { Class } from './Class.js'
 
-const intervalSize = (min, max, classCount) => Math.ceil((max - min) / classCount)
+const intervalSize = (min, max, classCount) => Math.max(1, Math.ceil((max - min) / classCount))
 
 class FrequencyTable {
   constructor(data, classCount) {
