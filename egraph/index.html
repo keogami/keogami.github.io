@@ -11,9 +11,14 @@
 </head>
 <body>
   <form>
-    <label for="number">Number:</label><input type="number" name="number" id="number">
+    <input type="number" name="number" id="number" placeholder="Element's Value">
+    <input type="submit" name="submit" id="submit" value="Add to List">
   </form>
-  <div class="lobby"></div>
+  <div class="lobby framed">
+    <span id="preview-text">The series will be shown here</span>
+    <div id="lobby-items"></div>
+  </div>
+  <hr>
   <div class="results"></div>
 </body>
 </html>
