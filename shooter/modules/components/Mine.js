@@ -51,7 +51,7 @@ class Mine {
 
     if (this._state.Is(STATE_COOKED)) {
       for (let enemy of screen.GetComponent("enemies").All()) {
-        if (Coord.Dist(this.coord, enemy.coord) <= this.range + enemy.size) {
+        if (Coord.Dist(this.coord, enemy.coord) <= this.range) {
           this._state.Shift(STATE_TRIGGERED)
           this._trigTime = timestamp
           console.log("triggered")
@@ -68,7 +68,7 @@ class Mine {
       }
       for (let enemy of screen.GetComponent("enemies").All()) {
         const dist = Coord.Dist(this.coord, enemy.coord)
-        if (dist <= this.range + enemy.size) {
+        if (dist <= this.range) {
           const damage = calculateDamage(this.damage, dist, trigRatio)
           enemy.Hit({ damage })
           console.log({ damage, trigRatio, dist})
