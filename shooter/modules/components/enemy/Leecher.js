@@ -23,7 +23,7 @@ class Leecher extends Enemy {
       taken.add(this.host)
       const call = () => {
         this.host.events.Remove(Enemy.EVENT_DEATH, call)
-        this.host = null
+        this.host = null // remove the reference so that it can be garbage collected
       }
       this.host.events.On(Enemy.EVENT_DEATH, call)
     }
