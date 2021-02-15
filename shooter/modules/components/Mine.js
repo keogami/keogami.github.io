@@ -22,6 +22,7 @@ class Mine {
     this.color = new Color(color, 1.0)
     this.size = size
     this.range = range
+    this.trigRange = 0.8 * range
     this.damage = damage
     this.setTime = setTime
     this.cookTime = cookTime
@@ -50,7 +51,7 @@ class Mine {
 
     if (this._state.Is(STATE_COOKED)) {
       for (let enemy of screen.GetComponent("enemies").All()) {
-        if (Coord.Dist(this.coord, enemy.coord) <= this.range) {
+        if (Coord.Dist(this.coord, enemy.coord) <= this.trigRange) {
           this._state.Shift(STATE_TRIGGERED)
           this._trigTime = timestamp
           break
@@ -98,7 +99,7 @@ class Mine {
 
     ctx.beginPath()
     ctx.setLineDash([10, 5, 5, 5])
-    ctx.arc(this.coord.x, this.coord.y, this.range, 0, 2 * Math.PI)
+    ctx.arc(this.coord.x, this.coord.y, this.trigRange, 0, 2 * Math.PI)
     ctx.stroke()
     ctx.closePath()
 
