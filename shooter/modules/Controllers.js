@@ -1,4 +1,5 @@
 import { Coord } from "./System.js"
+import { Event } from "./components/helpers/Event.js"
 
 class Keyboard {
   constructor() {
@@ -54,12 +55,25 @@ class Keyboard {
 class Mouse {
   constructor() {
     this.coord = new Coord(0, 0)
+    this.events = new Event()
+    this.CLICK_LEFT = Symbol("left")
+    this.CLICK_RIGHT = Symbol("right")
   }
 
   Connect(element) {
     element.addEventListener("mousemove", (ev) => {
       this.coord.x = ev.clientX
       this.coord.y = ev.clientY
+    })
+
+    element.addEventListener("click", (ev) => {
+      ev.preventDefault()
+      this.events.Emit(this.CLICK_LEFT, ev)
+    })
+
+    element.addEventListener("contextmenu", (ev) => {
+      ev.preventDefault()
+      this.events.Emit(this.CLICK_RIGHT, ev)
     })
   }
 }
