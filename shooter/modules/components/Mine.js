@@ -12,7 +12,8 @@ const mineStateTransitions = [
 ]
 
 function calculateDamage(dist) {
-  const bias = 0.75
+  const desiredMin = 0.2
+  const bias = 1 - desiredMin
   return 1 - (bias * dist)
 }
 
