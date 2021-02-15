@@ -86,7 +86,7 @@ class Mine {
     ctx.lineWidth = 3
 
     ctx.beginPath()
-    ctx.rect(this.coord.x - this.size/2, this.coord.y - this.size/2, this.size, this.size)
+    ctx.rect(this.coord.x - this.size / 2, this.coord.y - this.size / 2, this.size, this.size)
     ctx.fill()
     ctx.closePath()
 
@@ -101,10 +101,12 @@ class Mine {
     ctx.stroke()
     ctx.closePath()
 
-    ctx.beginPath()
-    ctx.arc(this.coord.x, this.coord.y, this.range * this._trigRatio, 0, 2 * Math.PI)
-    ctx.fill()
-    ctx.closePath()
+    if (this._state.Is(STATE_TRIGGERED)) {
+      ctx.beginPath()
+      ctx.arc(this.coord.x, this.coord.y, this.range * (1.0 - this._trigRatio), 0, 2 * Math.PI)
+      ctx.fill()
+      ctx.closePath()
+    }
     ctx.restore()
   }
 }
