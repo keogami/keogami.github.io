@@ -18,14 +18,14 @@ function calculateDamage(dist) {
 }
 
 class Mine {
-  constructor(coord, color, size, range, damage, setTime, cookTime, compSet) {
+  constructor(coord, color, size, range, damage, cookTime, compSet) {
     this.coord = coord.Clone()
     this.color = new Color(color, 1.0)
     this.size = size
     this.range = range
     this.trigRange = 0.8 * range
     this.damage = damage
-    this.setTime = setTime
+    this.setTime = null // probably should use 0 instead of null
     this.cookTime = cookTime
     this.compSet = compSet
 
@@ -43,6 +43,7 @@ class Mine {
 
   Update({ timestamp, screen }) {
     if (this._state.Is(STATE_COOKING)) {
+      this.setTime = this.setTime ?? timestamp
       const dt = (timestamp - this.setTime)
       this._cooked = Math.min(1.0, dt / this.cookTime)
       if (dt >= this.cookTime) {
