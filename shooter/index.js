@@ -69,16 +69,17 @@ const printScore = (val) => {
 }
 game.onScoreUpdate = printScore
 
-let mine = null
+const mines = new ComponentSet()
+screen.AddComponent("mines", mines)
+
+function plantMine() {
+  const p = screen.GetComponent("player")
+  const mine = new Mine(p.coord, 0x00FF00, 28, 100, 15, 1500, mines)
+  mines.Add(mine)
+}
 
 function frame({ timestamp, elapsedTime }) {
-  if (mine === null) {
-    const mines = new ComponentSet()
-    screen.AddComponent("mines", mines)
-    const coord = screen.RandomCoord({ outside: false })
-    mine = new Mine(coord, 0x00FF00, 28, 100, 5, timestamp, 2000, mines)
-    mines.Add(mine)
-  }
+
   // Update and draw the screen
   screen.Update({ game, keys, mouse, elapsedTime, timestamp, screen })
   screen.Draw()
@@ -104,7 +105,8 @@ let scorePrintingIntervalHandle = null
 
 function endGame() {
   stopSpawning()
-  removeEventListener("click", shootProjectiles)
+  mouse.events.Remove(mouse.CLICK_LEFT, shootProjectiles)
+  mouse.events.Remove(mouse.CLICK_RIGHT, plantMine)
 
   const animTime = 1000
   setTimeout(() => {
@@ -133,12 +135,14 @@ function startGame() {
   screen.AddComponent("player", new Player(screen.origin, 25, "#ac35ac", new Vector2(8, 8)))
   screen.GetComponent("projectiles").Clear()
   screen.GetComponent("enemies").Clear()
+  screen.GetComponent("mines").Clear()
 
   game.score = 0
 
   setTimeout(() => {
     game.Run(frame)
-    addEventListener("click", shootProjectiles)
+    mouse.events.On(mouse.CLICK_LEFT, shootProjectiles)
+    mouse.events.On(mouse.CLICK_RIGHT, plantMine)
     const id = setInterval(spawnEnemies, 1000)
     stopSpawning = () => clearInterval(id)
   }, 500)
