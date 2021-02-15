@@ -41,7 +41,7 @@ class Mine {
     this._state = new State(STATE_COOKING, mineStateTransitions)
   }
 
-  Update({ timestamp, screen }) {
+  Update({ timestamp, screen, game }) {
     if (this._state.Is(STATE_COOKING)) {
       this.setTime = this.setTime ?? timestamp
       const dt = (timestamp - this.setTime)
@@ -75,7 +75,10 @@ class Mine {
           const dist = Coord.Dist(this.coord, enemy.coord)
           if (dist <= this.range) {
             const damage = this.damage * calculateDamage(dist / this.range)
-            enemy.Hit({ damage })
+            const killed = enemy.Hit({ damage })
+            if (killed) {
+              game.score += enemy.score
+            }
           }
         }
       }
