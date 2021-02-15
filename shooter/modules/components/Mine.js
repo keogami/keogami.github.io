@@ -11,12 +11,9 @@ const mineStateTransitions = [
   [STATE_COOKED, STATE_TRIGGERED]
 ]
 
-function calculateDamage(base, dist, dt) {
-  return base
-  if (dist === 0) {
-    return base * dt
-  }
-  return base * (1 / dist) * dt
+function calculateDamage(dist) {
+  const bias = 0.75
+  return 1 - (bias * dist)
 }
 
 class Mine {
@@ -35,6 +32,7 @@ class Mine {
     this._trigTime = null
     this._trigRatio = 0.0
     this._trigFadeTime = 200 // ms
+    this._damaged = false
 
     this._cooked = 0.0
 
@@ -68,11 +66,14 @@ class Mine {
         this.compSet.Remove(this)
         return
       }
-      for (let enemy of screen.GetComponent("enemies").All()) {
-        const dist = Coord.Dist(this.coord, enemy.coord)
-        if (dist <= this.range) {
-          const damage = calculateDamage(this.damage, dist, this._trigRatio)
-          enemy.Hit({ damage })
+      if (!this._damaged) {
+        this._damaged = true
+        for (let enemy of screen.GetComponent("enemies").All()) {
+          const dist = Coord.Dist(this.coord, enemy.coord)
+          if (dist <= this.range) {
+            const damage = this.damage * calculateDamage(dist / this.range)
+            enemy.Hit({ damage })
+          }
         }
       }
     }
