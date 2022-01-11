@@ -1,4 +1,31 @@
+section#landing {
+  background: #1F252C;
+}
+
+section#projects {
+  background: #8177F0;
+}
+
+section#skills {
+  background: #422E56;
+}
+
+section#interests {
+  background: #FFFFFF;
+}
+
+section#music {
+  background: #BE70FB;
+}
+
 body {
   padding: 0px;
   margin: 0px;
 }
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=main.css.map */
