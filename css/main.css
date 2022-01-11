@@ -18,13 +18,58 @@ section#music {
   background: #BE70FB;
 }
 
-body {
+body, h1, h2, p {
   padding: 0px;
   margin: 0px;
+  font-family: "Roboto", san-serif;
+  letter-spacing: 4px;
+  font-weight: 300;
 }
 
 section {
   min-height: 100vh;
+}
+
+#landing {
+  color: white;
+  display: grid;
+  position: relative;
+}
+#landing #top {
+  background: grey;
+  position: absolute;
+  width: 100%;
+  height: 12vh;
+}
+#landing #main {
+  display: flex;
+  flex-direction: column;
+}
+#landing #main > div {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center center;
+  gap: 16px;
+  transform: translateY(30%);
+}
+#landing #main > div h1 {
+  font-size: 1.8em;
+}
+#landing #main > div span {
+  font-size: 0.675em;
+  font-size: 0.675em;
+  background: grey;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transform: scale(0.8);
+  margin: -10px 0;
+}
+#landing #main > div h2 {
+  font-size: 1.35em;
+}
+#landing #main > div p {
+  font-size: 0.7875em;
 }
 
 /*# sourceMappingURL=main.css.map */

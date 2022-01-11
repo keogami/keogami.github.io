@@ -12,11 +12,61 @@ $theme-bg: (
   }
 }
 
-body {
+body, h1, h2, p {
   padding: 0px;
   margin: 0px;
+  font-family: 'Roboto', san-serif;
+  letter-spacing: 4px;
+  font-weight: 300;
 }
 
 section {
   min-height: 100vh;
+}
+
+#landing {
+  color: white;
+  display: grid;
+  position: relative;
+
+  #top {
+    background: grey;
+    position: absolute;
+    width: 100%;
+    height: 12vh;
+  }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+    > div {
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+      place-items: center center;
+      gap: 16px;
+      transform: translateY(30%);
+
+      $text-size: 1.8em;
+      h1 {
+        font-size: $text-size;
+      }
+      span {
+        font-size: $text-size * (12/32);
+        font-size: 0.675em;
+        background: grey;
+        padding: 6px 8px;
+        border-radius: 6px;
+        transform: scale(0.8);
+        margin: -10px 0;
+      }
+      h2 {
+        font-size: $text-size * (24/32);
+      }
+      p {
+        font-size: $text-size * (14/32);
+      }
+    }
+  }
 }
