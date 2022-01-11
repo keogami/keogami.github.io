@@ -7,7 +7,7 @@ import { Normie, Leecher, Healer } from "./modules/components/Enemies.js"
 import { Mine } from "./modules/components/Mine.js";
 
 const $ = document
-const DEBUG = true
+const DEBUG = false
 
 const putInfo = ((el) => (it) => {
   return el.innerText = it

@@ -2,11 +2,11 @@ import { Coord } from "./System.js"
 
 // Screen handles the game's interaction with the canvas
 // it keeps the list of component that are "drawn" on the screen
-// the components can inserted and deleted from the screen
+// the components can be inserted and deleted from the screen
 //
 // Updating the screen updates all the components on the screen
-// the component MAY NOT have an .Update(data) method, in which case its not drawn
-// updates are done in order of insertion, but the aplication mustn't depend on this detail
+// the component MAY NOT have an .Update(data) method, in which case the component remains static
+// updates are done in order of insertion, but the aplication MUST NOT depend on this detail
 //
 // Drawing the screen simply implies clearing the canvas and drawing the components
 // all components MUST have a .Draw(screen) method
