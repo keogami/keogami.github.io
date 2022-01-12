@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $theme-bg: (
   "landing": #1F252C,
   "projects": #8177F0,
@@ -7,7 +9,7 @@ $theme-bg: (
 );
 
 $coa-size-big: (width: 131px, height: 62px);
-$coa-size-smol-scale: 0.6;
+$coa-size-smol-scale: math.div(57, 92.39);
 $coa-size-smol: (
   width: map-get($coa-size-big, $key: "width") * $coa-size-smol-scale,
   height: map-get($coa-size-big, $key: "height") * $coa-size-smol-scale
