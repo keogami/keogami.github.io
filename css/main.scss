@@ -6,6 +6,13 @@ $theme-bg: (
   "music": #BE70FB
 );
 
+$coa-size-big: (width: 131px, height: 62px);
+$coa-size-smol-scale: 0.6;
+$coa-size-smol: (
+  width: map-get($coa-size-big, $key: "width") * $coa-size-smol-scale,
+  height: map-get($coa-size-big, $key: "height") * $coa-size-smol-scale
+);
+
 @each $section-name, $bg-color in $theme-bg {
   section##{$section-name} {
     background: $bg-color;
@@ -22,12 +29,41 @@ body, h1, h2, p {
 
 section {
   min-height: 100vh;
+  position: relative;
+
+  .big.next-coa {
+    width: map-get($coa-size-big, "width");
+    height: map-get($coa-size-big, "height");
+  }
+
+  .next-coa {
+    width: map-get($coa-size-smol, "width");
+    height: map-get($coa-size-smol, "height");
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+
+    .next-coa-svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+    }
+  
+    .next-coa-up {
+      width: 24px;
+      height: 14px;
+      z-index: 1;
+      transform: translateY(30%);
+    }
+  }
 }
 
 #landing {
   color: white;
   display: grid;
-  position: relative;
   place-items: center;
 
   #top {
@@ -74,7 +110,5 @@ section {
 
   .next-coa-svg {
     fill: map-get($theme-bg, "projects");
-    position: absolute;
-    bottom: 0;
   }
 }

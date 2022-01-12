@@ -28,12 +28,37 @@ body, h1, h2, p {
 
 section {
   min-height: 100vh;
+  position: relative;
+}
+section .big.next-coa {
+  width: 131px;
+  height: 62px;
+}
+section .next-coa {
+  width: 78.6px;
+  height: 37.2px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+section .next-coa .next-coa-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+section .next-coa .next-coa-up {
+  width: 24px;
+  height: 14px;
+  z-index: 1;
+  transform: translateY(30%);
 }
 
 #landing {
   color: white;
   display: grid;
-  position: relative;
   place-items: center;
 }
 #landing #top {
@@ -75,8 +100,6 @@ section {
 }
 #landing .next-coa-svg {
   fill: #8177F0;
-  position: absolute;
-  bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
