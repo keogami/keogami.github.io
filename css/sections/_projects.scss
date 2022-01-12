@@ -1,0 +1,8 @@
+#projects {
+  display: grid;
+  place-items: center;
+
+  .next-coa-svg {
+    fill: map-get($theme-bg, "skills");
+  }
+}

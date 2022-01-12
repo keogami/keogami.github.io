@@ -102,4 +102,12 @@ section .next-coa .next-coa-up {
   fill: #8177F0;
 }
 
+#projects {
+  display: grid;
+  place-items: center;
+}
+#projects .next-coa-svg {
+  fill: #422E56;
+}
+
 /*# sourceMappingURL=main.css.map */
