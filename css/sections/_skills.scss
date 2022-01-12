@@ -1,0 +1,11 @@
+@use "sass:math";
+@import "../base/headed-section";
+
+#skills {
+  @extend %headed-section;
+  color: white;
+
+  .next-coa-svg {
+    fill: map-get($theme-bg, "interests");
+  }
+}

@@ -1,0 +1,7 @@
+@use "sass:math";
+@import "../base/headed-section";
+
+#music {
+  @extend %headed-section;
+  color: rgba($color: #000000, $alpha: 0.8);
+}

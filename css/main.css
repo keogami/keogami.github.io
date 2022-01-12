@@ -102,19 +102,19 @@ section .next-coa .next-coa-up {
   fill: #8177F0;
 }
 
-#projects {
+#music, #interests, #skills, #projects {
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
 }
-#projects #circle {
+#music #circle, #interests #circle, #skills #circle, #projects #circle {
   width: 16px;
   height: 16px;
   background: currentColor;
   border-radius: 8px;
   margin: 4px;
 }
-#projects #header {
+#music #header, #interests #header, #skills #header, #projects #header {
   color: currentColor;
   display: grid;
   padding: 16px 6.9333333333vw;
@@ -124,11 +124,11 @@ section .next-coa .next-coa-up {
   margin-top: 67px;
   align-items: center;
 }
-#projects #header .line {
+#music #header .line, #interests #header .line, #skills #header .line, #projects #header .line {
   height: 1px;
   background: currentColor;
 }
-#projects #header h1 {
+#music #header h1, #interests #header h1, #skills #header h1, #projects #header h1 {
   font-size: 1.06875em;
   margin: 0px 12px 0px 16px;
 }
@@ -138,6 +138,117 @@ section .next-coa .next-coa-up {
 }
 #projects .next-coa-svg {
   fill: #422E56;
+}
+
+#music, #interests, #skills, #projects {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+}
+#music #circle, #interests #circle, #skills #circle, #projects #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #interests #header, #skills #header, #projects #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 6.9333333333vw;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #interests #header .line, #skills #header .line, #projects #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #interests #header h1, #skills #header h1, #projects #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#skills {
+  color: white;
+}
+#skills .next-coa-svg {
+  fill: #FFFFFF;
+}
+
+#music, #interests, #projects, #skills {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+}
+#music #circle, #interests #circle, #projects #circle, #skills #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #interests #header, #projects #header, #skills #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 6.9333333333vw;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #interests #header .line, #projects #header .line, #skills #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #interests #header h1, #projects #header h1, #skills #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#interests {
+  color: black;
+}
+#interests .next-coa-svg {
+  fill: #BE70FB;
+}
+
+#music, #projects, #skills, #interests {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+}
+#music #circle, #projects #circle, #skills #circle, #interests #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #projects #header, #skills #header, #interests #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 6.9333333333vw;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #projects #header .line, #skills #header .line, #interests #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #projects #header h1, #skills #header h1, #interests #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#music {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /*# sourceMappingURL=main.css.map */
