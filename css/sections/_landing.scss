@@ -25,12 +25,11 @@
       gap: 16px;
       transform: translateY(30%);
 
-      $text-size: 1.8em;
       h1 {
-        font-size: $text-size;
+        font-size: $text-size-base;
       }
       span {
-        font-size: $text-size * math.div(12, 32);
+        font-size: $text-size-base * math.div(12, 32);
         font-size: 0.675em;
         background: #808080;
         padding: 6px 4px 6px 8px;
@@ -39,10 +38,10 @@
         margin: -10px 0;
       }
       h2 {
-        font-size: $text-size * math.div(24, 32);
+        font-size: $text-size-base * math.div(24, 32);
       }
       p {
-        font-size: $text-size * math.div(14, 32);
+        font-size: $text-size-base * math.div(14, 32);
       }
     }
   }
