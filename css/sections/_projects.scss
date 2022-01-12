@@ -1,6 +1,38 @@
+@use "sass:math";
+
 #projects {
   display: grid;
   place-items: center;
+  grid-template-rows: max-content max-content;
+
+  #circle {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 8px;
+    margin: 4px;
+  }
+
+  #header {
+    color: white;
+    display: grid;
+    padding: 16px (100vw * math.div(26, 375));
+    grid-template-columns: 1fr max-content 1fr;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 67px;
+    align-items: center;
+
+    .line {
+      height: 1px;
+      background: white;
+    }
+
+    h1 {
+      font-size: $text-size-base * math.div(19, 32);
+      margin: 0px 12px 0px 16px;
+    }
+  }
 
   .next-coa-svg {
     fill: map-get($theme-bg, "skills");
