@@ -110,12 +110,12 @@ section .next-coa .next-coa-up {
 #projects #circle {
   width: 16px;
   height: 16px;
-  background: white;
+  background: currentColor;
   border-radius: 8px;
   margin: 4px;
 }
 #projects #header {
-  color: white;
+  color: currentColor;
   display: grid;
   padding: 16px 6.9333333333vw;
   grid-template-columns: 1fr max-content 1fr;
@@ -126,11 +126,15 @@ section .next-coa .next-coa-up {
 }
 #projects #header .line {
   height: 1px;
-  background: white;
+  background: currentColor;
 }
 #projects #header h1 {
   font-size: 1.06875em;
   margin: 0px 12px 0px 16px;
+}
+
+#projects {
+  color: white;
 }
 #projects .next-coa-svg {
   fill: #422E56;
