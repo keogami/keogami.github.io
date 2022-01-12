@@ -1,3 +1,5 @@
+@use "sass:math";
+
 #landing {
   color: white;
   display: grid;
@@ -28,7 +30,7 @@
         font-size: $text-size;
       }
       span {
-        font-size: $text-size * (12/32);
+        font-size: $text-size * math.div(12, 32);
         font-size: 0.675em;
         background: #808080;
         padding: 6px 4px 6px 8px;
@@ -37,10 +39,10 @@
         margin: -10px 0;
       }
       h2 {
-        font-size: $text-size * (24/32);
+        font-size: $text-size * math.div(24, 32);
       }
       p {
-        font-size: $text-size * (14/32);
+        font-size: $text-size * math.div(14, 32);
       }
     }
   }
