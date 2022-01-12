@@ -212,6 +212,19 @@ section .next-coa .next-coa-up {
 #interests {
   color: black;
 }
+#interests #main {
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+#interests #main #interest-container {
+  display: grid;
+  gap: 48px;
+}
+#interests #eye-svg {
+  position: absolute;
+  bottom: max(48px, 15vh);
+}
 #interests .next-coa-svg {
   fill: #BE70FB;
 }

@@ -5,6 +5,22 @@
   @extend %headed-section;
   color: black;
 
+  #main {
+    display: grid;
+    place-items: center;
+    position: absolute;
+
+    #interest-container {
+      display: grid;
+      gap: 48px;
+    }
+  }
+
+  #eye-svg {
+    position: absolute;
+    bottom: max(48px, 15vh);
+  }
+
   .next-coa-svg {
     fill: map-get($theme-bg, "music");
   }
