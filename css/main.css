@@ -106,6 +106,7 @@ section .next-coa .next-coa-up {
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
 }
 #music #circle, #interests #circle, #skills #circle, #projects #circle {
   width: 16px;
@@ -117,7 +118,7 @@ section .next-coa .next-coa-up {
 #music #header, #interests #header, #skills #header, #projects #header {
   color: currentColor;
   display: grid;
-  padding: 16px 6.9333333333vw;
+  padding: 16px 0px;
   grid-template-columns: 1fr max-content 1fr;
   width: 100%;
   box-sizing: border-box;
@@ -144,6 +145,7 @@ section .next-coa .next-coa-up {
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
 }
 #music #circle, #interests #circle, #skills #circle, #projects #circle {
   width: 16px;
@@ -155,7 +157,7 @@ section .next-coa .next-coa-up {
 #music #header, #interests #header, #skills #header, #projects #header {
   color: currentColor;
   display: grid;
-  padding: 16px 6.9333333333vw;
+  padding: 16px 0px;
   grid-template-columns: 1fr max-content 1fr;
   width: 100%;
   box-sizing: border-box;
@@ -173,6 +175,43 @@ section .next-coa .next-coa-up {
 
 #skills {
   color: white;
+  grid-template-rows: repeat(3, max-content) 1fr 17.5953079179vh !important;
+  align-items: end !important;
+}
+#skills #main {
+  width: 100%;
+  padding: 1em 9.6%;
+  box-sizing: border-box;
+}
+#skills #main ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+  justify-content: center;
+}
+#skills #main ul li {
+  font-size: 0.9em;
+}
+#skills #main ul li:before {
+  content: "#";
+}
+#skills #animated-wheel {
+  height: 110px;
+  width: 110px;
+  border: 2px dashed white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center center;
+}
+#skills #animated-wheel #inner-circle {
+  width: 34.1px;
+  height: 34.1px;
+  background: white;
+  border-radius: 50%;
 }
 #skills .next-coa-svg {
   fill: #FFFFFF;
@@ -182,6 +221,7 @@ section .next-coa .next-coa-up {
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
 }
 #music #circle, #interests #circle, #projects #circle, #skills #circle {
   width: 16px;
@@ -193,7 +233,7 @@ section .next-coa .next-coa-up {
 #music #header, #interests #header, #projects #header, #skills #header {
   color: currentColor;
   display: grid;
-  padding: 16px 6.9333333333vw;
+  padding: 16px 0px;
   grid-template-columns: 1fr max-content 1fr;
   width: 100%;
   box-sizing: border-box;
@@ -233,6 +273,7 @@ section .next-coa .next-coa-up {
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
 }
 #music #circle, #projects #circle, #skills #circle, #interests #circle {
   width: 16px;
@@ -244,7 +285,7 @@ section .next-coa .next-coa-up {
 #music #header, #projects #header, #skills #header, #interests #header {
   color: currentColor;
   display: grid;
-  padding: 16px 6.9333333333vw;
+  padding: 16px 0px;
   grid-template-columns: 1fr max-content 1fr;
   width: 100%;
   box-sizing: border-box;
@@ -262,6 +303,22 @@ section .next-coa .next-coa-up {
 
 #music {
   color: rgba(0, 0, 0, 0.8);
+}
+
+[data-lang=js]:before {
+  color: #F0E822;
+}
+
+[data-lang=go]:before {
+  color: #22BFF0;
+}
+
+[data-lang=rust]:before {
+  color: #F5955F;
+}
+
+[data-lang=html]:before {
+  color: #F55C3B;
 }
 
 /*# sourceMappingURL=main.css.map */

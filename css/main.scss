@@ -70,3 +70,13 @@ section {
 @import "./sections/skills";
 @import "./sections/interests";
 @import "./sections/music";
+
+@import "./lang-colors";
+
+@each $lang, $color in $lang-colors {
+  [data-lang=#{$lang}] {
+    &:before {
+      color: $color;
+    }
+  }
+}

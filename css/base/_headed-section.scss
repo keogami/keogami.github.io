@@ -2,6 +2,7 @@
   display: grid;
   place-items: center;
   grid-template-rows: max-content max-content;
+  padding: 0px (100vw * math.div(26, 375));
 
   #circle {
     width: 16px;
@@ -14,7 +15,7 @@
   #header {
     color: currentColor;
     display: grid;
-    padding: 16px (100vw * math.div(26, 375));
+    padding: 16px 0px;
     grid-template-columns: 1fr max-content 1fr;
     width: 100%;
     box-sizing: border-box;
