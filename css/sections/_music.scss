@@ -4,4 +4,47 @@
 #music {
   @extend %headed-section;
   color: rgba($color: #000000, $alpha: 0.8);
+
+  #main {
+    #wip-card {
+      background: #8C47C2;
+      padding: 16px;
+      border-radius: 8px;
+      display: grid;
+      gap: 16px;
+      max-width: 353px;
+
+      h1 {
+        font-size: $text-size-base * math.div(19, 32);
+      }
+
+      #link {
+        font-size: $text-size-base * math.div(11.4, 32);
+        text-decoration: none;
+        color: currentColor;
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: $text-size-base * math.div(13, 32);
+      }
+
+      .line {
+        width: 100%;
+        height: 2px;
+        background: map-get($map: $theme-bg, $key: "music");
+        margin-top: 32px;
+      }
+
+      #cta {
+        font-size: $text-size-base * math.div(13, 32);
+        color: white;
+        text-decoration: none;
+        padding: 8px;
+        background: rgba($color: #000000, $alpha: 0.4);
+        border-radius: 8px;
+        justify-self: right;
+      }
+    }
+  }
 }
