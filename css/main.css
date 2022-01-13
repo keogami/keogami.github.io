@@ -107,6 +107,8 @@ section .next-coa .next-coa-up {
   place-items: center;
   grid-template-rows: max-content max-content;
   padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
 }
 #music #circle, #interests #circle, #skills #circle, #projects #circle {
   width: 16px;
@@ -146,6 +148,8 @@ section .next-coa .next-coa-up {
   place-items: center;
   grid-template-rows: max-content max-content;
   padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
 }
 #music #circle, #interests #circle, #skills #circle, #projects #circle {
   width: 16px;
@@ -175,7 +179,7 @@ section .next-coa .next-coa-up {
 
 #skills {
   color: white;
-  grid-template-rows: repeat(3, max-content) 1fr 17.5953079179vh !important;
+  grid-template-rows: repeat(3, max-content) 1fr !important;
   align-items: end !important;
 }
 #skills #main {
@@ -222,6 +226,8 @@ section .next-coa .next-coa-up {
   place-items: center;
   grid-template-rows: max-content max-content;
   padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
 }
 #music #circle, #interests #circle, #projects #circle, #skills #circle {
   width: 16px;
@@ -274,6 +280,8 @@ section .next-coa .next-coa-up {
   place-items: center;
   grid-template-rows: max-content max-content;
   padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
 }
 #music #circle, #projects #circle, #skills #circle, #interests #circle {
   width: 16px;

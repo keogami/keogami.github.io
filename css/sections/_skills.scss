@@ -4,7 +4,7 @@
 #skills {
   @extend %headed-section;
   color: white;
-  grid-template-rows: repeat(3, max-content) 1fr (100vh * math.div(120, 682)) !important;
+  grid-template-rows: repeat(3, max-content) 1fr !important;
   align-items: end !important;
 
   #main {

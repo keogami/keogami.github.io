@@ -3,6 +3,8 @@
   place-items: center;
   grid-template-rows: max-content max-content;
   padding: 0px (100vw * math.div(26, 375));
+  padding-bottom: (100vh * math.div(120, 682));
+  box-sizing: border-box;
 
   #circle {
     width: 16px;
