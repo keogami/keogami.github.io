@@ -48,6 +48,7 @@ section .next-coa .next-coa-svg {
   height: 100%;
   position: absolute;
   z-index: 0;
+  transform: translateY(2px);
 }
 section .next-coa .next-coa-up {
   width: 24px;
