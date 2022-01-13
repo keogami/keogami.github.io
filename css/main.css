@@ -102,42 +102,69 @@ section .next-coa .next-coa-up {
   fill: #8177F0;
 }
 
-#music, #interests, #skills, #projects {
-  display: grid;
-  place-items: center;
-  grid-template-rows: max-content max-content;
-  padding: 0px 6.9333333333vw;
-  padding-bottom: 17.5953079179vh;
-  box-sizing: border-box;
-}
-#music #circle, #interests #circle, #skills #circle, #projects #circle {
-  width: 16px;
-  height: 16px;
-  background: currentColor;
-  border-radius: 8px;
-  margin: 4px;
-}
-#music #header, #interests #header, #skills #header, #projects #header {
-  color: currentColor;
-  display: grid;
-  padding: 16px 0px;
-  grid-template-columns: 1fr max-content 1fr;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 67px;
-  align-items: center;
-}
-#music #header .line, #interests #header .line, #skills #header .line, #projects #header .line {
-  height: 1px;
-  background: currentColor;
-}
-#music #header h1, #interests #header h1, #skills #header h1, #projects #header h1 {
-  font-size: 1.06875em;
-  margin: 0px 12px 0px 16px;
-}
-
 #projects {
   color: white;
+}
+#projects #main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+}
+#projects #main .card {
+  max-width: 323px;
+  background: #5733BD;
+  border-radius: 12px;
+  text-rendering: optimizeLegibility;
+  display: grid;
+  grid-template-rows: max-content;
+}
+#projects #main .card #cover {
+  max-width: 100%;
+}
+#projects #main .card #info {
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: grid;
+  align-content: flex-start;
+  grid-template-rows: repeat(3, max-content) 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+#projects #main .card #info #project-name {
+  font-size: 1.18125em;
+}
+#projects #main .card #info #tech-stack {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 8px;
+}
+#projects #main .card #info #tech-stack [data-lang] {
+  font-size: 0.7875em;
+}
+#projects #main .card #info #tech-stack [data-lang]:before {
+  content: "#";
+}
+#projects #main .card #info #description {
+  font-size: 0.703125em;
+  letter-spacing: 2px;
+}
+#projects #main .card #info .line {
+  height: 2px;
+  align-self: end;
+  background: rgba(0, 0, 0, 0.3);
+}
+#projects #main .card #info #cta {
+  justify-self: right;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 4px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  font-size: 0.7875em;
 }
 #projects .next-coa-svg {
   fill: #422E56;
@@ -327,6 +354,18 @@ section .next-coa .next-coa-up {
 
 [data-lang=html]:before {
   color: #F55C3B;
+}
+
+[data-lang=crypto]:before {
+  color: #70F022;
+}
+
+[data-lang=social]:before {
+  color: #22BFF0;
+}
+
+[data-lang=mngmt]:before {
+  color: #70F022;
 }
 
 /*# sourceMappingURL=main.css.map */
