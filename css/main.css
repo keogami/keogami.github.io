@@ -110,6 +110,7 @@ section .next-coa .next-coa-up {
   flex-wrap: wrap;
   gap: 36px;
   justify-content: center;
+  margin-top: 32px;
 }
 #projects #main .card {
   max-width: 323px;
