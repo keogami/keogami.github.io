@@ -1,0 +1,100 @@
+-
+  title: PI Club
+  tags:
+  - Social
+  - Managerial
+  description: |
+    A club for the better programmers with a zeal for creating high quality software projects
+  link: https://pi-club.ml
+
+-
+  title: Crypt
+  tags:
+  - Go
+  - Crypto
+  - CLI
+  description: |
+    A simple utility to encrypt & decrypt files with AES-256 with passphrases
+  link: https://github.com/keogami/crypt
+
+-
+  title: Shooter
+  tags:
+  - Js
+  - Game Dev
+  - Vanilla
+  - 2D FPS
+  description: |
+    A fast-paced 2D shoot-em-up game, written entirely in vanilla Js, playable in your favorite web browser
+  link: https://keogami.ml/shooter
+
+-
+  title: Zenpull
+  tags:
+  - Go
+  - CLI
+  - Network
+  - Concurrent
+  description: |
+    A Go CLI tool for downloading files from a list of urls in parallel;
+    Jam-packed with features but still elegant and simple
+  link: https://github.com/keogami/zenpull
+
+-
+  title: Orchestra
+  tags:
+  - Go
+  - Library
+  - Multi Threaded
+  - Architectural
+  description: |
+    A minimal Go routine orchestration library,
+    providing an architecture for working with multiple long running green threads
+  link: https://github.com/keogami/orchestra
+
+-
+  title: AniGen
+  tags:
+  - Js
+  - Library
+  - Animation
+  - 2D
+  description: |
+    An opinionated animation engine that allows users to generate pixel-perfect animations through Js,
+    providing abstractions over problematic parts like, timelines, interpolations, etc.
+  link: https://github.com/keogami/anigen
+
+-
+  title: Servicify
+  tags:
+  - Go
+  - CLI
+  - Windows Service API
+  - Low Level
+  description: |
+    A Go CLI tool for Windows to run other applications as a windows service;
+    By comforming to Windows Service life-cycle while running the application inside it
+  link: https://github.com/keogami/servicify
+
+-
+  title: CrypticDiary
+  tags:
+  - Js
+  - WSH
+  - Windows
+  - Legacy
+  description: |
+    A WSH Js script for writing encrypted diary entries.
+    A by-product of my exploration of windows' legacy Js Runtime and Shell Host
+  link: https://github.com/keogami/crypticdiary
+
+-
+  title: BoolViz
+  tags:
+  - Js
+  - Educational
+  - Meta Programming
+  description: |
+    A boolean circuit visualizer creator. It allows teachers to create interactive boolean circuit,
+    for demonstrating flow of current through the circuit for different input states
+  link: https://github.com/keogami/boolviz
