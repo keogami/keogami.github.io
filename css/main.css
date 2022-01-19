@@ -142,6 +142,7 @@ section .next-coa .next-coa-up {
   padding: 0px;
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 #projects #main .card #info #tech-stack [data-lang] {
   font-size: 0.7875em;
@@ -150,7 +151,7 @@ section .next-coa .next-coa-up {
   content: "#";
 }
 #projects #main .card #info #description {
-  font-size: 0.703125em;
+  font-size: 0.7875em;
   letter-spacing: 2px;
 }
 #projects #main .card #info .line {

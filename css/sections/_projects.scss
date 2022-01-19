@@ -42,6 +42,7 @@
           padding: 0px;
           display: flex;
           gap: 8px;
+          flex-wrap: wrap;
 
           [data-lang] {
             font-size: $text-size-base * math.div(14, 32);
@@ -53,7 +54,7 @@
         }
 
         #description {
-          font-size: $text-size-base * math.div(12.5, 32);
+          font-size: $text-size-base * math.div(14, 32);
           letter-spacing: 2px;
         }
 

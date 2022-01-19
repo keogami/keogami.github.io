@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keogami</title>
-  
+
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -37,8 +38,9 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-  </style> 
+  </style>
 </head>
+
 <body>
   <main>
     <section id="landing">
@@ -73,36 +75,182 @@
       </div>
       <div id="main">
         <!--actual content-->
-        <div class="card">
-          <img src="./img/unavailable.svg" alt="unavailable" id="cover">
+
+
+        <div id="pi-club" class="card">
+          <!-- ./img/covers/pi-club.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for PI Club" id="cover">
+          <div id="info">
+            <h2 id="project-name">PI Club</h2>
+            <ul id="tech-stack">
+              <li data-lang="social">Social</li>
+              <li data-lang="managerial">Managerial</li>
+            </ul>
+            <p id="description">
+              A club for the better programmers with a zeal for creating high quality software projects
+            </p>
+            <div class="line"></div>
+            <a href="https://pi-club.ml" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="crypt" class="card">
+          <!-- ./img/covers/crypt.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for Crypt" id="cover">
           <div id="info">
             <h2 id="project-name">Crypt</h2>
             <ul id="tech-stack">
               <li data-lang="go">Go</li>
               <li data-lang="crypto">Crypto</li>
+              <li data-lang="cli">CLI</li>
             </ul>
             <p id="description">
               A simple utility to encrypt & decrypt files with AES-256 with passphrases
             </p>
             <div class="line"></div>
-            <a href="#" id="cta">Check it out</a>
+            <a href="https://github.com/keogami/crypt" id="cta">Check it out</a>
           </div>
         </div>
-        <div class="card">
-          <img src="./img/unavailable.svg" alt="unavailable" id="cover">
+
+        <div id="shooter" class="card">
+          <!-- ./img/covers/shooter.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for Shooter" id="cover">
           <div id="info">
-            <h2 id="project-name">PI Club</h2>
+            <h2 id="project-name">Shooter</h2>
             <ul id="tech-stack">
-              <li data-lang="social">Social</li>
-              <li data-lang="mngmt">Managerial</li>
+              <li data-lang="js">Js</li>
+              <li data-lang="game-dev">Game Dev</li>
+              <li data-lang="vanilla">Vanilla</li>
+              <li data-lang="2d-fps">2D FPS</li>
             </ul>
             <p id="description">
-              PI Club is a club of better programmers who wanna grow fast, build projects and simply... be amazing
+              A fast-paced 2D shoot-em-up game, written entirely in vanilla Js, playable in your favorite web browser
             </p>
             <div class="line"></div>
-            <a href="#" id="cta">Check it out</a>
+            <a href="https://keogami.ml/shooter" id="cta">Check it out</a>
           </div>
         </div>
+
+        <div id="zenpull" class="card">
+          <!-- ./img/covers/zenpull.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for Zenpull" id="cover">
+          <div id="info">
+            <h2 id="project-name">Zenpull</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="cli">CLI</li>
+              <li data-lang="network">Network</li>
+              <li data-lang="concurrent">Concurrent</li>
+            </ul>
+            <p id="description">
+              A Go CLI tool for downloading files from a list of urls in parallel; Jam-packed with features but still
+              elegant and simple
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/zenpull" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="orchestra" class="card">
+          <!-- ./img/covers/orchestra.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for Orchestra" id="cover">
+          <div id="info">
+            <h2 id="project-name">Orchestra</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="library">Library</li>
+              <li data-lang="multi-threaded">Multi Threaded</li>
+              <li data-lang="architectural">Architectural</li>
+            </ul>
+            <p id="description">
+              A minimal Go routine orchestration library, providing an architecture for working with multiple long
+              running green threads
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/orchestra" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="anigen" class="card">
+          <!-- ./img/covers/anigen.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for AniGen" id="cover">
+          <div id="info">
+            <h2 id="project-name">AniGen</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="library">Library</li>
+              <li data-lang="animation">Animation</li>
+              <li data-lang="2d">2D</li>
+            </ul>
+            <p id="description">
+              An opinionated animation engine that allows users to generate pixel-perfect animations through Js,
+              providing abstractions over problematic parts like, timelines, interpolations, etc.
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/anigen" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="servicify" class="card">
+          <!-- ./img/covers/servicify.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for Servicify" id="cover">
+          <div id="info">
+            <h2 id="project-name">Servicify</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="cli">CLI</li>
+              <li data-lang="windows-service-api">Windows Service API</li>
+              <li data-lang="low-level">Low Level</li>
+            </ul>
+            <p id="description">
+              A Go CLI tool for Windows to run other applications as a windows service; By comforming to Windows Service
+              life-cycle while running the application inside it
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/servicify" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="crypticdiary" class="card">
+          <!-- ./img/covers/crypticdiary.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for CrypticDiary" id="cover">
+          <div id="info">
+            <h2 id="project-name">CrypticDiary</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="wsh">WSH</li>
+              <li data-lang="windows">Windows</li>
+              <li data-lang="legacy">Legacy</li>
+            </ul>
+            <p id="description">
+              A WSH Js script for writing encrypted diary entries. A by-product of my exploration of windows' legacy Js
+              Runtime and Shell Host
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/crypticdiary" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="boolviz" class="card">
+          <!-- ./img/covers/boolviz.svg -->
+          <img src="./img/unavailable.svg" alt="cover image for BoolViz" id="cover">
+          <div id="info">
+            <h2 id="project-name">BoolViz</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="educational">Educational</li>
+              <li data-lang="meta-programming">Meta Programming</li>
+            </ul>
+            <p id="description">
+              A boolean circuit visualizer creator. It allows teachers to create interactive boolean circuit, for
+              demonstrating flow of current through the circuit for different input states
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/boolviz" id="cta">Check it out</a>
+          </div>
+        </div>
+
+
       </div>
       <div class="next-coa">
         <svg class="next-coa-svg">
@@ -153,12 +301,12 @@
           <span class="interest">#Music</span>
           <span class="interest">#Code</span>
         </div>
-        
+
       </div>
       <svg id="eye-svg" width="132" height="76" viewBox="0 0 132 76" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="Eye">
-          <path id="lids" d="M66 2L2 38L66 74L130 38L66 2Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
-          <circle id="ball" cx="66" cy="38" r="9" fill="black"/>
+          <path id="lids" d="M66 2L2 38L66 74L130 38L66 2Z" stroke="black" stroke-width="2" stroke-linejoin="round" />
+          <circle id="ball" cx="66" cy="38" r="9" fill="black" />
         </g>
       </svg>
       <div class="next-coa">
@@ -192,11 +340,13 @@
   </main>
   <svg style="display: none">
     <symbol id="up" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2.00005 12.0001L12 2.00009L22 12.0001" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol> 
+      <path d="M2.00005 12.0001L12 2.00009L22 12.0001" stroke="white" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </symbol>
     <symbol id="blyat" viewBox="0 0 131 62" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 62.3263L59.6694 2.65686C62.7936 -0.467338 67.8589 -0.467342 70.9831 2.65685L130.653 62.3263H0Z"/>
-    </symbol>   
+      <path d="M0 62.3263L59.6694 2.65686C62.7936 -0.467338 67.8589 -0.467342 70.9831 2.65685L130.653 62.3263H0Z" />
+    </symbol>
   </svg>
 </body>
+
 </html>
