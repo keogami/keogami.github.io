@@ -123,6 +123,7 @@ section .next-coa .next-coa-up {
 }
 #projects #main .card #cover {
   max-width: 100%;
+  border-radius: 12px;
 }
 #projects #main .card #info {
   padding: 8px 16px;
