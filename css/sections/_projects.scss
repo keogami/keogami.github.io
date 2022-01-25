@@ -86,6 +86,12 @@
           color: list.nth($theme, 2);
         }
       }
+
+      &#crypticdiary {
+        [data-lang]::before {
+          color: black !important;
+        }
+      }
     }
   }
 

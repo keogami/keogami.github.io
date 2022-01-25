@@ -190,6 +190,9 @@ section .next-coa .next-coa-up {
   background: #561e43;
   color: white;
 }
+#projects #main .card#crypticdiary [data-lang]::before {
+  color: black !important;
+}
 #projects .next-coa-svg {
   fill: #422E56;
 }
