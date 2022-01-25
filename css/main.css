@@ -423,8 +423,56 @@ section .next-coa .next-coa-up {
   color: #22BFF0;
 }
 
-[data-lang=mngmt]:before {
-  color: #70F022;
+[data-lang=managerial]:before {
+  color: #FF8B8B;
+}
+
+[data-lang=cli]:before {
+  color: #FF00A7;
+}
+
+[data-lang="2d"]:before {
+  color: #D994D1;
+}
+
+[data-lang=game-dev]:before {
+  color: #22CE96;
+}
+
+[data-lang=network]:before {
+  color: #9DCE45;
+}
+
+[data-lang=library]:before {
+  color: #E12F61;
+}
+
+[data-lang=architectural]:before {
+  color: #E67A7A;
+}
+
+[data-lang=multi-threaded]:before {
+  color: #A3E690;
+}
+
+[data-lang=animation]:before {
+  color: #CA65D2;
+}
+
+[data-lang=low-level]:before {
+  color: #97E8D5;
+}
+
+[data-lang=windows-service-api]:before {
+  color: #D99777;
+}
+
+[data-lang=educational]:before {
+  color: #51F0C3;
+}
+
+[data-lang=meta-programming]:before {
+  color: #F27979;
 }
 
 /*# sourceMappingURL=main.css.map */
