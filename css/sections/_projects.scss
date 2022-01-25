@@ -1,4 +1,7 @@
 @use "sass:math";
+@use "sass:list";
+
+@import "../card-theme";
 
 #projects {
   @extend %headed-section;
@@ -74,6 +77,13 @@
           background: rgba(0, 0, 0, 60%);
           border-radius: 8px;
           font-size: $text-size-base * math.div(14, 32);
+        }
+      }
+
+      @each $section, $theme in $card-theme {
+        &##{$section} {
+          background: list.nth($theme, 1);
+          color: list.nth($theme, 2);
         }
       }
     }

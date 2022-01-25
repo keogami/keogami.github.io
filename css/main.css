@@ -170,6 +170,26 @@ section .next-coa .next-coa-up {
   border-radius: 8px;
   font-size: 0.7875em;
 }
+#projects #main .card#shooter {
+  background: #0b0512;
+  color: white;
+}
+#projects #main .card#anigen {
+  background: #31115b;
+  color: white;
+}
+#projects #main .card#servicify {
+  background: #4b154f;
+  color: white;
+}
+#projects #main .card#crypticdiary {
+  background: #e7d424;
+  color: black;
+}
+#projects #main .card#boolviz {
+  background: #561e43;
+  color: white;
+}
 #projects .next-coa-svg {
   fill: #422E56;
 }
