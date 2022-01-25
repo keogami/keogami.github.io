@@ -75,7 +75,7 @@ section {
 @import "./lang-colors";
 
 @each $lang, $color in $lang-colors {
-  [data-lang=#{$lang}] {
+  [data-lang="#{$lang}"] {
     &:before {
       color: $color;
     }
