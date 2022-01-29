@@ -1,0 +1,481 @@
+section#landing {
+  background: #1F252C;
+}
+
+section#projects {
+  background: #8177F0;
+}
+
+section#skills {
+  background: #422E56;
+}
+
+section#interests {
+  background: #FFFFFF;
+}
+
+section#music {
+  background: #BE70FB;
+}
+
+body, h1, h2, p {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", san-serif;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+
+section {
+  min-height: 100vh;
+  position: relative;
+}
+section .big.next-coa {
+  width: 131px;
+  height: 62px;
+}
+section .next-coa {
+  width: 80.820435112px;
+  height: 38.2508929538px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+section .next-coa .next-coa-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  transform: translateY(2px);
+}
+section .next-coa .next-coa-up {
+  width: 24px;
+  height: 14px;
+  z-index: 1;
+  transform: translateY(30%);
+}
+
+#landing {
+  color: white;
+  display: grid;
+  place-items: center;
+}
+#landing #top {
+  background: #C4C4C4;
+  position: absolute;
+  width: 100%;
+  height: 12vh;
+  top: 0;
+}
+#landing #main {
+  display: flex;
+  flex-direction: column;
+}
+#landing #main > div {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center center;
+  gap: 16px;
+  transform: translateY(30%);
+}
+#landing #main > div h1 {
+  font-size: 1.8em;
+}
+#landing #main > div span {
+  font-size: 0.675em;
+  font-size: 0.675em;
+  background: #808080;
+  padding: 6px 4px 6px 8px;
+  border-radius: 6px;
+  transform: scale(0.8);
+  margin: -10px 0;
+}
+#landing #main > div h2 {
+  font-size: 1.35em;
+}
+#landing #main > div p {
+  font-size: 0.7875em;
+}
+#landing .next-coa-svg {
+  fill: #8177F0;
+}
+
+#projects {
+  color: white;
+}
+#projects #main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+  margin-top: 32px;
+}
+#projects #main .card {
+  max-width: 323px;
+  background: #5733BD;
+  border-radius: 12px;
+  text-rendering: optimizeLegibility;
+  display: grid;
+  grid-template-rows: max-content;
+}
+#projects #main .card #cover {
+  max-width: 100%;
+  border-radius: 12px;
+}
+#projects #main .card #info {
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: grid;
+  align-content: flex-start;
+  grid-template-rows: repeat(3, max-content) 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+#projects #main .card #info #project-name {
+  font-size: 1.18125em;
+}
+#projects #main .card #info #tech-stack {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 4px 12px;
+  flex-wrap: wrap;
+}
+#projects #main .card #info #tech-stack [data-lang] {
+  font-size: 0.7875em;
+}
+#projects #main .card #info #tech-stack [data-lang]:before {
+  content: "#";
+}
+#projects #main .card #info #description {
+  font-size: 0.7875em;
+  letter-spacing: 2px;
+}
+#projects #main .card #info .line {
+  height: 2px;
+  align-self: end;
+  background: rgba(0, 0, 0, 0.3);
+}
+#projects #main .card #info #cta {
+  justify-self: right;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 4px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  font-size: 0.7875em;
+}
+#projects #main .card#shooter {
+  background: #0b0512;
+  color: white;
+}
+#projects #main .card#anigen {
+  background: #31115b;
+  color: white;
+}
+#projects #main .card#servicify {
+  background: #4b154f;
+  color: white;
+}
+#projects #main .card#crypticdiary {
+  background: #e7d424;
+  color: black;
+}
+#projects #main .card#boolviz {
+  background: #561e43;
+  color: white;
+}
+#projects #main .card#crypticdiary [data-lang]::before {
+  color: black !important;
+}
+#projects .next-coa-svg {
+  fill: #422E56;
+}
+
+#music, #interests, #skills, #projects {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
+}
+#music #circle, #interests #circle, #skills #circle, #projects #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #interests #header, #skills #header, #projects #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 0px;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #interests #header .line, #skills #header .line, #projects #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #interests #header h1, #skills #header h1, #projects #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#skills {
+  color: white;
+  grid-template-rows: repeat(3, max-content) 1fr !important;
+  align-items: end !important;
+}
+#skills #main {
+  width: 100%;
+  padding: 1em 9.6%;
+  box-sizing: border-box;
+}
+#skills #main ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+  justify-content: center;
+}
+#skills #main ul li {
+  font-size: 0.9em;
+}
+#skills #main ul li:before {
+  content: "#";
+}
+#skills #animated-wheel {
+  height: 110px;
+  width: 110px;
+  border: 2px dashed white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center center;
+}
+#skills #animated-wheel #inner-circle {
+  width: 34.1px;
+  height: 34.1px;
+  background: white;
+  border-radius: 50%;
+}
+#skills .next-coa-svg {
+  fill: #FFFFFF;
+}
+
+#music, #interests, #projects, #skills {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
+}
+#music #circle, #interests #circle, #projects #circle, #skills #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #interests #header, #projects #header, #skills #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 0px;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #interests #header .line, #projects #header .line, #skills #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #interests #header h1, #projects #header h1, #skills #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#interests {
+  color: black;
+}
+#interests #main {
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+#interests #main #interest-container {
+  display: grid;
+  gap: 48px;
+}
+#interests #eye-svg {
+  position: absolute;
+  bottom: max(48px, 15vh);
+}
+#interests .next-coa-svg {
+  fill: #BE70FB;
+}
+
+#music, #projects, #skills, #interests {
+  display: grid;
+  place-items: center;
+  grid-template-rows: max-content max-content;
+  padding: 0px 6.9333333333vw;
+  padding-bottom: 17.5953079179vh;
+  box-sizing: border-box;
+}
+#music #circle, #projects #circle, #skills #circle, #interests #circle {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 8px;
+  margin: 4px;
+}
+#music #header, #projects #header, #skills #header, #interests #header {
+  color: currentColor;
+  display: grid;
+  padding: 16px 0px;
+  grid-template-columns: 1fr max-content 1fr;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 67px;
+  align-items: center;
+}
+#music #header .line, #projects #header .line, #skills #header .line, #interests #header .line {
+  height: 1px;
+  background: currentColor;
+}
+#music #header h1, #projects #header h1, #skills #header h1, #interests #header h1 {
+  font-size: 1.06875em;
+  margin: 0px 12px 0px 16px;
+}
+
+#music {
+  color: rgba(0, 0, 0, 0.8);
+}
+#music #main #wip-card {
+  background: #8C47C2;
+  padding: 16px;
+  border-radius: 8px;
+  display: grid;
+  gap: 16px;
+  max-width: 353px;
+}
+#music #main #wip-card h1 {
+  font-size: 1.06875em;
+}
+#music #main #wip-card #link {
+  font-size: 0.64125em;
+  text-decoration: none;
+  color: currentColor;
+  letter-spacing: 2px;
+}
+#music #main #wip-card p {
+  font-size: 0.73125em;
+}
+#music #main #wip-card .line {
+  width: 100%;
+  height: 2px;
+  background: #BE70FB;
+  margin-top: 32px;
+}
+#music #main #wip-card #cta {
+  font-size: 0.73125em;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  justify-self: right;
+}
+
+[data-lang=js]:before {
+  color: #F0E822;
+}
+
+[data-lang=go]:before {
+  color: #22BFF0;
+}
+
+[data-lang=rust]:before {
+  color: #F5955F;
+}
+
+[data-lang=html]:before {
+  color: #F55C3B;
+}
+
+[data-lang=crypto]:before {
+  color: #70F022;
+}
+
+[data-lang=social]:before {
+  color: #22BFF0;
+}
+
+[data-lang=managerial]:before {
+  color: #FF8B8B;
+}
+
+[data-lang=cli]:before {
+  color: #FF00A7;
+}
+
+[data-lang="2d"]:before {
+  color: #D994D1;
+}
+
+[data-lang=game-dev]:before {
+  color: #22CE96;
+}
+
+[data-lang=network]:before {
+  color: #9DCE45;
+}
+
+[data-lang=library]:before {
+  color: #E12F61;
+}
+
+[data-lang=architectural]:before {
+  color: #E67A7A;
+}
+
+[data-lang=multi-threaded]:before {
+  color: #A3E690;
+}
+
+[data-lang=animation]:before {
+  color: #CA65D2;
+}
+
+[data-lang=low-level]:before {
+  color: #97E8D5;
+}
+
+[data-lang=windows-service-api]:before {
+  color: #D99777;
+}
+
+[data-lang=educational]:before {
+  color: #51F0C3;
+}
+
+[data-lang=meta-programming]:before {
+  color: #F27979;
+}
+
+/*# sourceMappingURL=main.css.map */

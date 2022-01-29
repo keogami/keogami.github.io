@@ -1,0 +1,101 @@
+@use "sass:math";
+@use "sass:list";
+
+@import "../card-theme";
+
+#projects {
+  @extend %headed-section;
+  color: white;
+
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    margin-top: 32px;
+
+    .card {
+      max-width: 323px;
+      background: #5733BD;
+      border-radius: 12px;
+      text-rendering: optimizeLegibility;
+      display: grid;
+      grid-template-rows: max-content;
+      
+      #cover {
+        max-width: 100%;
+        border-radius: 12px;
+      }
+
+      #info {
+        padding: 8px 16px;
+        box-sizing: border-box;
+        display: grid;
+        align-content: flex-start;
+        grid-template-rows: repeat(3, max-content) 1fr;
+        gap: 10px;
+        margin-top: 6px;
+
+        #project-name {
+          font-size: $text-size-base * math.div(21, 32);
+        }
+
+        #tech-stack {
+          list-style-type: none;
+          margin: 0px;
+          padding: 0px;
+          display: flex;
+          gap: 4px 12px;
+          flex-wrap: wrap;
+
+          [data-lang] {
+            font-size: $text-size-base * math.div(14, 32);
+            
+            &:before {
+              content: "#";
+            }
+          }
+        }
+
+        #description {
+          font-size: $text-size-base * math.div(14, 32);
+          letter-spacing: 2px;
+        }
+
+        .line {
+          height: 2px;
+          align-self: end;
+          background: rgba(0, 0, 0, 30%);
+        }
+
+        #cta {
+          justify-self: right;
+          text-decoration: none;
+          color: white;
+          margin-bottom: 4px;
+          padding: 8px;
+          background: rgba(0, 0, 0, 60%);
+          border-radius: 8px;
+          font-size: $text-size-base * math.div(14, 32);
+        }
+      }
+
+      @each $section, $theme in $card-theme {
+        &##{$section} {
+          background: list.nth($theme, 1);
+          color: list.nth($theme, 2);
+        }
+      }
+
+      &#crypticdiary {
+        [data-lang]::before {
+          color: black !important;
+        }
+      }
+    }
+  }
+
+  .next-coa-svg {
+    fill: map-get($theme-bg, "skills");
+  }
+}

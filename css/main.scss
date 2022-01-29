@@ -1,0 +1,83 @@
+@use "sass:math";
+
+$theme-bg: (
+  "landing": #1F252C,
+  "projects": #8177F0,
+  "skills": #422E56,
+  "interests": #FFFFFF,
+  "music": #BE70FB
+);
+
+$text-size-base: 1.8em;
+
+$coa-size-big: (width: 131px, height: 62px);
+$coa-size-smol-scale: math.div(57, 92.39);
+$coa-size-smol: (
+  width: map-get($coa-size-big, $key: "width") * $coa-size-smol-scale,
+  height: map-get($coa-size-big, $key: "height") * $coa-size-smol-scale
+);
+
+@each $section-name, $bg-color in $theme-bg {
+  section##{$section-name} {
+    background: $bg-color;
+  }
+}
+
+body, h1, h2, p {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', san-serif;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+
+section {
+  min-height: 100vh;
+  position: relative;
+
+  .big.next-coa {
+    width: map-get($coa-size-big, "width");
+    height: map-get($coa-size-big, "height");
+  }
+
+  .next-coa {
+    width: map-get($coa-size-smol, "width");
+    height: map-get($coa-size-smol, "height");
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+
+    .next-coa-svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+      transform: translateY(2px);
+    }
+  
+    .next-coa-up {
+      width: 24px;
+      height: 14px;
+      z-index: 1;
+      transform: translateY(30%);
+    }
+  }
+}
+
+@import "./sections/landing";
+@import "./sections/projects";
+@import "./sections/skills";
+@import "./sections/interests";
+@import "./sections/music";
+
+@import "./lang-colors";
+
+@each $lang, $color in $lang-colors {
+  [data-lang="#{$lang}"] {
+    &:before {
+      color: $color;
+    }
+  }
+}

@@ -1,7 +1,347 @@
-<style>
-  body {
-    font-family: lato, sans-serif;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<center>I haven't really thought on what to put here so... I will just put a cat image, idk</center>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keogami</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2d1447">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2d1447">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <meta name="description" content="Portfolio of the hobbyist programmer, Keogami aka Tushar Saxena">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://keogami.ml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Keogami">
+  <meta property="og:description" content="Portfolio of the hobbyist programmer, Keogami aka Tushar Saxena">
+  <meta property="og:image" content="https://keogami.ml/img/og-cover.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="keogami.ml">
+  <meta property="twitter:url" content="https://keogami.ml">
+  <meta name="twitter:title" content="Keogami">
+  <meta name="twitter:description" content="Portfolio of the hobbyist programmer, Keogami aka Tushar Saxena">
+  <meta name="twitter:image" content="https://keogami.ml/img/og-cover.png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  </style>
+</head>
+
+<body>
+  <main>
+    <section id="landing">
+      <div id="top">
+        <!--The animation canvas goes here-->
+      </div>
+      <div id="main">
+        <div>
+          <h1>Tushar Saxena</h1>
+          <span>a.k.a</span>
+          <h2>Keogami</h2>
+          <p>The Hobbyist Programmer</p>
+        </div>
+      </div>
+      <div class="big next-coa">
+        <svg class="next-coa-svg">
+          <use xlink:href="#blyat" />
+        </svg>
+        <svg class="next-coa-up">
+          <use xlink:href="#up" />
+        </svg>
+      </div>
+    </section>
+    <section id="projects">
+      <div id="circle">
+        <!--circle-->
+      </div>
+      <div id="header">
+        <div class="line"></div>
+        <h1>Projects</h1>
+        <div class="line"></div>
+      </div>
+      <div id="main">
+        <!--actual content-->
+
+
+        <div id="pi-club" class="card">
+          <!-- ./img/covers/pi-club.svg -->
+          <img src="./img/covers/pi-club.svg" alt="cover image for PI Club" id="cover">
+          <div id="info">
+            <h2 id="project-name">PI Club</h2>
+            <ul id="tech-stack">
+              <li data-lang="social">Social</li>
+              <li data-lang="managerial">Managerial</li>
+            </ul>
+            <p id="description">
+              A club for the better programmers with a zeal for creating high quality software projects
+            </p>
+            <div class="line"></div>
+            <a href="https://pi-club.ml" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="crypt" class="card">
+          <!-- ./img/covers/crypt.svg -->
+          <img src="./img/covers/crypt.svg" alt="cover image for Crypt" id="cover">
+          <div id="info">
+            <h2 id="project-name">Crypt</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="cli">CLI</li>
+              <li data-lang="crypto">Crypto</li>
+            </ul>
+            <p id="description">
+              A simple utility to encrypt & decrypt files with AES-256 with passphrases
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/crypt" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="shooter" class="card">
+          <!-- ./img/covers/shooter.svg -->
+          <img src="./img/covers/shooter.png" alt="cover image for Shooter" id="cover">
+          <div id="info">
+            <h2 id="project-name">Shooter</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="2d">2D</li>
+              <li data-lang="vanilla">Vanilla</li>
+              <li data-lang="game-dev">Game Dev</li>
+            </ul>
+            <p id="description">
+              A fast-paced 2D shoot-em-up game, written entirely in vanilla Js, playable in your favorite web browser
+            </p>
+            <div class="line"></div>
+            <a href="https://keogami.ml/shooter" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="zenpull" class="card">
+          <!-- ./img/covers/zenpull.svg -->
+          <img src="./img/covers/zenpull.svg" alt="cover image for Zenpull" id="cover">
+          <div id="info">
+            <h2 id="project-name">Zenpull</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="cli">CLI</li>
+              <li data-lang="network">Network</li>
+              <li data-lang="multi-threaded">Multi Threaded</li>
+            </ul>
+            <p id="description">
+              A Go CLI tool for downloading files from a list of urls in parallel
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/zenpull" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="orchestra" class="card">
+          <!-- ./img/covers/orchestra.svg -->
+          <img src="./img/covers/orchestra.svg" alt="cover image for Orchestra" id="cover">
+          <div id="info">
+            <h2 id="project-name">Orchestra</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="library">Library</li>
+              <li data-lang="architectural">Architectural</li>
+              <li data-lang="multi-threaded">Multi Threaded</li>
+            </ul>
+            <p id="description">
+              A minimal Go routine orchestration library
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/orchestra" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="anigen" class="card">
+          <!-- ./img/covers/anigen.svg -->
+          <img src="./img/covers/anigen.svg" alt="cover image for AniGen" id="cover">
+          <div id="info">
+            <h2 id="project-name">AniGen</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="2d">2D</li>
+              <li data-lang="vanilla">Vanilla</li>
+              <li data-lang="library">Library</li>
+              <li data-lang="animation">Animation</li>
+            </ul>
+            <p id="description">
+              An opinionated animation engine written in vanilla Js
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/anigen" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="servicify" class="card">
+          <!-- ./img/covers/servicify.svg -->
+          <img src="./img/covers/servicify.svg" alt="cover image for Servicify" id="cover">
+          <div id="info">
+            <h2 id="project-name">Servicify</h2>
+            <ul id="tech-stack">
+              <li data-lang="go">Go</li>
+              <li data-lang="cli">CLI</li>
+              <li data-lang="low-level">Low Level</li>
+              <li data-lang="windows-service-api">Windows Service API</li>
+            </ul>
+            <p id="description">
+              A Go CLI tool for Windows to run other applications as a windows service
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/servicify" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="crypticdiary" class="card">
+          <!-- ./img/covers/crypticdiary.svg -->
+          <img src="./img/covers/crypticdiary.svg" alt="cover image for CrypticDiary" id="cover">
+          <div id="info">
+            <h2 id="project-name">CrypticDiary</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="wsh">WSH</li>
+              <li data-lang="legacy">Legacy</li>
+              <li data-lang="windows">Windows</li>
+            </ul>
+            <p id="description">
+              A WSH Js script for writing encrypted diary entries
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/crypticdiary" id="cta">Check it out</a>
+          </div>
+        </div>
+
+        <div id="boolviz" class="card">
+          <!-- ./img/covers/boolviz.svg -->
+          <img src="./img/covers/boolviz.svg" alt="cover image for BoolViz" id="cover">
+          <div id="info">
+            <h2 id="project-name">BoolViz</h2>
+            <ul id="tech-stack">
+              <li data-lang="js">Js</li>
+              <li data-lang="educational">Educational</li>
+              <li data-lang="meta-programming">Meta Programming</li>
+            </ul>
+            <p id="description">
+              A boolean circuit visualizer creator which allows teachers to create interactive boolean circuit
+            </p>
+            <div class="line"></div>
+            <a href="https://github.com/keogami/boolviz" id="cta">Check it out</a>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="next-coa">
+        <svg class="next-coa-svg">
+          <use xlink:href="#blyat" />
+        </svg>
+      </div>
+    </section>
+    <section id="skills">
+      <div id="circle">
+        <!--circle-->
+      </div>
+      <div id="header">
+        <div class="line"></div>
+        <h1>Skills</h1>
+        <div class="line"></div>
+      </div>
+      <div id="main">
+        <!--actual content-->
+        <ul id="skill-list">
+          <li data-lang="js">Js</li>
+          <li data-lang="go">Go</li>
+          <li data-lang="rust">Rust</li>
+          <li data-lang="html">HTML</li>
+        </ul>
+      </div>
+      <div id="animated-wheel">
+        <div id="inner-circle"></div>
+      </div>
+      <div class="next-coa">
+        <svg class="next-coa-svg">
+          <use xlink:href="#blyat" />
+        </svg>
+      </div>
+    </section>
+    <section id="interests">
+      <div id="circle">
+        <!--circle-->
+      </div>
+      <div id="header">
+        <div class="line"></div>
+        <h1>Interests</h1>
+        <div class="line"></div>
+      </div>
+      <div id="main">
+        <!--actual content-->
+        <div id="interest-container">
+          <span class="interest">#Anime</span>
+          <span class="interest">#Music</span>
+          <span class="interest">#Code</span>
+        </div>
+
+      </div>
+      <svg id="eye-svg" width="132" height="76" viewBox="0 0 132 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="Eye">
+          <path id="lids" d="M66 2L2 38L66 74L130 38L66 2Z" stroke="black" stroke-width="2" stroke-linejoin="round" />
+          <circle id="ball" cx="66" cy="38" r="9" fill="black" />
+        </g>
+      </svg>
+      <div class="next-coa">
+        <svg class="next-coa-svg">
+          <use xlink:href="#blyat" />
+        </svg>
+      </div>
+    </section>
+    <section id="music">
+      <div id="circle">
+        <!--circle-->
+      </div>
+      <div id="header">
+        <div class="line"></div>
+        <h1>Music I Like</h1>
+        <div class="line"></div>
+      </div>
+      <div id="main">
+        <!--actual content-->
+        <div id="wip-card">
+          <h1>Work in progress</h1>
+          <a id="link" href="https://github.com/quasilevel/maple">https://github.com/quasilevel/maple</a>
+          <p>
+            PI Club is developing an API server which will allow my recently liked music to show up here
+          </p>
+          <div class="line"></div>
+          <a id="cta" href="#">Watch it up happen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <svg style="display: none">
+    <symbol id="up" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.00005 12.0001L12 2.00009L22 12.0001" stroke="white" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </symbol>
+    <symbol id="blyat" viewBox="0 0 131 62" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 62.3263L59.6694 2.65686C62.7936 -0.467338 67.8589 -0.467342 70.9831 2.65685L130.653 62.3263H0Z" />
+    </symbol>
+  </svg>
+</body>
+
+</html>

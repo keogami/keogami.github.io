@@ -1,0 +1,56 @@
+@use "sass:math";
+@import "../base/headed-section";
+
+#skills {
+  @extend %headed-section;
+  color: white;
+  grid-template-rows: repeat(3, max-content) 1fr !important;
+  align-items: end !important;
+
+  #main {
+    width: 100%;
+    padding: 1em (100% * math.div(24px, 250px));
+    box-sizing: border-box;
+
+    ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 12px;
+      justify-content: center;
+
+      li {
+        font-size: $text-size-base * math.div(16, 32);
+
+        &:before {
+          content: "#";
+        }
+      }
+    }
+  }
+
+  #animated-wheel {
+    $size: 110px;
+    height: $size;
+    width: $size;
+    border: 2px dashed white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center center;
+
+    #inner-circle {
+      $size: 0.31 * $size;
+      width: $size;
+      height: $size;
+      background: white;
+      border-radius: 50%;
+    }
+  }
+
+  .next-coa-svg {
+    fill: map-get($theme-bg, "interests");
+  }
+}
